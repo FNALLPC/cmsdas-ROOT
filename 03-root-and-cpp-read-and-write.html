@@ -445,23 +445,7 @@ the tutorial.</li>
 <a href="https://www.nevis.columbia.edu/~seligman/root-class/" class="external-link">ROOT
 tutorial from Nevis Lab (Columbia Univ.)</a>. Very complete and always
 up-to-date tutorial from our friends at Columbia.</li>
-</ul><div id="be-in-the-container" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="be-in-the-container" class="callout-inner">
-<h3 class="callout-title">Be in the container!</h3>
-<div class="callout-content">
-<p>For this episode, you’ll still be running your code from the
-<code>my_root</code> docker container that you launched in the previous
-episode.</p>
-<p>As you edit the files though, you may want to do the editing from
-your <em>local</em> environment, so that you have access to your
-preferred editors.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="root-terminology">ROOT terminology<a class="anchor" aria-label="anchor" href="#root-terminology"></a></h2>
+</ul></section><section><h2 class="section-heading" id="root-terminology">ROOT terminology<a class="anchor" aria-label="anchor" href="#root-terminology"></a></h2>
 <hr class="half-width"><p>To store these datasets, ROOT uses an object called
 <code>TTree</code> (ROOT objects are often prefixed by a
 <code>T</code>).</p>
@@ -649,7 +633,7 @@ this:</p>
   Full source code file for write_ROOT_file.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -803,7 +787,7 @@ line of your <code>my_root</code> container shell!</p>
   Output from write_ROOT_file
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -844,19 +828,19 @@ that are generated.</p>
 (<code>ls -ltr</code>) and see if you have a new file called
 <code>tree.root</code>. This is the output of what you just ran.</p>
 <p>Huzzah! You’ve successfully written your first ROOT file!</p>
-<div id="will-i-have-to-make-my-open-data-analysis-code" class="callout">
+<div id="will-i-have-to-make-my-analysis-code" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="will-i-have-to-make-my-open-data-analysis-code" class="callout-inner">
-<h3 class="callout-title">Will I have to <code>make</code> my Open Data
-analysis code?</h3>
+<div id="will-i-have-to-make-my-analysis-code" class="callout-inner">
+<h3 class="callout-title">Will I have to <code>make</code> my analysis
+code?</h3>
 <div class="callout-content">
 <p>Maybe!</p>
 <ul><li>If you prefer to write your end-level analysis code in C++, your
 <code>make</code> setup will be very similar to this exercise</li>
-<li>If you are analyzing AOD or MiniAOD data and using the dedicated CMS
-software, a configuration and build system called <a href="https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideScram" class="external-link">SCRAM</a>
+<li>If you are analyzing AOD or MiniAOD data and using CMSSW software, a
+configuration and build system called <a href="https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideScram" class="external-link">SCRAM</a>
 is used for this purpose of compiling and linking code.</li>
 <li>If you only analyze NanoAOD samples and do so in python (see the
 upcoming lesson pages!), then you will not use <code>make</code>
@@ -981,7 +965,7 @@ like this:</p>
   Full source code file for read_ROOT_file.cc
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1073,8 +1057,7 @@ We edit it so that it looks like this.</p>
 <span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a><span class="er">    </span>rm -f ./*~ ./*.o ./write_ROOT_file</span>
 <span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a>    rm -f ./*~ ./*.o ./read_ROOT_file</span></code></pre>
 </div>
-<p>We can now compile and run the code in your <code>my_root</code>
-container shell!</p>
+<p>We can now compile and run the code!</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1092,7 +1075,7 @@ random numbers that make up the values.</p>
   Output of read_ROOT_file
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1142,7 +1125,7 @@ and make a few histograms, still using the C++ syntax.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>ROOT defines the file format in which all of the CMS Open Data is
+<ul><li>ROOT defines the file format in which all of the CMS data is
 stored.</li>
 <li>These files can be accessed quickly using C++ code and the relevant
 information can be dumped out into other formats.</li>

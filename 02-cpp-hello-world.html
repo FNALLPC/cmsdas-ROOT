@@ -224,8 +224,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#setting-up-your-working-area">Setting up your working area</a></li>
-<li><a href="#your-first-cc-program-optional-review">Your first C/C++ program (Optional Review!)</a></li>
+        <ul><li><a href="#your-first-cc-program-optional-review">Your first C/C++ program (Optional Review!)</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -368,66 +367,23 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="setting-up-your-working-area">Setting up your working area<a class="anchor" aria-label="anchor" href="#setting-up-your-working-area"></a></h2>
-<hr class="half-width"><p>If you completed the <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/" class="external-link">Docker
-pre-exercises</a> you should already have worked through <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/03-docker-for-cms-opendata/index.html" class="external-link">this
-episode</a>, under <strong>Download the docker images for ROOT and
-python tools and start container</strong>, and you will have</p>
-<ul><li>a working directory <code>cms_open_data_root</code> on your local
-computer</li>
-<li>a docker container with name <code>my_root</code> created with the
-working directory <code>cms_open_data_root</code> mounted into the
-<code>/code</code> directory of the container.</li>
-</ul><p>Start your ROOT container with</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
-</div>
-<p>In the container, you will be in the <code>/code</code> directory and
-it shares the files with your local <code>cms_open_data_root</code>
-directory.</p>
-<div id="if-youre-using-apptainer" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="if-youre-using-apptainer" class="callout-inner">
-<h3 class="callout-title">If you’re using apptainer:</h3>
-<div class="callout-content">
-<p>Whenever you see a <code>docker start</code> instruction, replace it
-with <code>apptainer shell</code> to open either the ROOT or Python
-container image. The specific commands in this pre-exercise and during
-the live workshop will be given for docker, since that is the most
-common application. As a general rule, editing of files will be done in
-the standard terminal (the containers do not have all text editors!) or
-via the jupyter-lab interface, and then commands will be executed inside
-the container shell. If you see <code>Singularity&gt;</code> on your
-command line, you are ready to run a ROOT or python script.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="your-first-cc-program-optional-review">Your first C/C++ program (Optional Review!)<a class="anchor" aria-label="anchor" href="#your-first-cc-program-optional-review"></a></h2>
+<section><h2 class="section-heading" id="your-first-cc-program-optional-review">Your first C/C++ program (Optional Review!)<a class="anchor" aria-label="anchor" href="#your-first-cc-program-optional-review"></a></h2>
 <hr class="half-width"><p>Let’s start with writing a simple <code>hello world</code> program in
 C. First we’ll edit the <em>source</em> code with an editor of your
-choice.</p>
-<p>Note that you will <em>edit</em> the file in a local terminal on your
-computer and then <em>run</em> the file in the Docker environment. This
-is because we mounted the <code>cms_open_data_root</code> directory on
-your local disk such that it is visible inside the Docker container.</p>
-<p>Let’s create a new file called <code>hello_world.cc</code> in the
-<code>cms_open_data_root</code> directory, using your preferred
-editor.</p>
+choice. Go to your <a href="index.html#setup">working directory for this
+exercise</a>, and let’s create a new file called
+<code>hello_world.cc</code>, using your preferred editor.</p>
 <p>The first thing we need to do, is <code>include</code> some standard
 libraries. These libraries allow us to access the C and C++ commands to
 print to the screen (<code>stdout</code> and <code>stderr</code>) as
 well as other basic function.</p>
 <p>At the very beginning of your file, add these three lines</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span></code></pre>
 </div>
 <p>The first library, <code>cstdlib</code>, you will see in almost every
 C++ program as it has many of the very basic functions, including those
@@ -441,14 +397,14 @@ functions, but for pedagogical purposes, we show you both.</p>
 <p>Every C++ program must have a <code>main</code> function. So let’s
 define it here. The scope of this function is defined by curly brackets
 <code>{ }</code>. So let’s add</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="op">}</span></span></code></pre>
 </div>
 <p>The <code>int</code> at the beginning tells us that this function
 will be returning an integer value. At the end of the <code>main</code>
@@ -475,14 +431,14 @@ have the empty <code>( )</code> after the <code>main</code>.</p>
 <p>This function would compile, but it doesn’t do anything. Let’s print
 some text to screen. Before the <code>return 0;</code> line, let’s add
 these three lines.</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello world! This uses the ANSI C 'printf' statement</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard out."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="bu">std::</span>cerr <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard error."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello world! This uses the ANSI C 'printf' statement</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard out."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="bu">std::</span>cerr <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard error."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span></code></pre>
 </div>
 <p>The text itself, should explain what they are doing. If you want to
 learn more about standard error and standard output, you can read more
@@ -496,27 +452,27 @@ on <a href="https://en.wikipedia.org/wiki/Standard_streams" class="external-link
   Full source code file for hello_world.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello world! This uses the ANSI C 'printf' statement</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard out."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="bu">std::</span>cerr <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard error."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello world! This uses the ANSI C 'printf' statement</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard out."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>    <span class="bu">std::</span>cerr <span class="op">&lt;&lt;</span> <span class="st">"Hello world! This uses the C++ 'iostream' library to direct output to standard error."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="op">}</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -528,19 +484,19 @@ code</em></a>. To do this, we’ll use the GNU C++ compiler,
 <code>g++</code>. Once you have saved your file, go to the container
 shell, make sure (e.g. with <code>ls -l</code>) that you your file is in
 the current directory and type this in your shell.</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">g++</span> hello_world.cc <span class="at">-o</span> hello_world</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">g++</span> hello_world.cc <span class="at">-o</span> hello_world</span></code></pre>
 </div>
 <p>This compiles your code to an executable called
 <code>hello_world</code>. You can now run this by typing the following
 on the shell command line, after which you’ll see the subsequent
 output.</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">./hello_world</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">./hello_world</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -549,8 +505,8 @@ output.</p>
 Hello world! This uses the C++ 'iostream' library to direct output to standard out.
 Hello world! This uses the C++ 'iostream' library to direct output to standard error.</code></pre>
 </div>
-<p>When you are working with the Open Data, you will be looping over
-events and may find yourself making selections based on certain physics
+<p>When you are working with CMS data, you might be looping over events
+and may find yourself making selections based on certain physics
 criteria. To that end, you may want to familiarize yourself with the C++
 syntax for <a href="https://www.w3schools.com/cpp/cpp_for_loop.asp" class="external-link">loops</a> and <a href="https://www.w3schools.com/cpp/cpp_conditions.asp" class="external-link">conditionals</a>.</p>
 <div id="keypoints1" class="callout keypoints">

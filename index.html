@@ -328,12 +328,29 @@ any links that you are not going to use.
  -->
 
 
-      <section id="setup"><p>This lesson requires a computer with an internet connection and a
-bash shell (either native Linux, MacOs or Windows WSL2 Linux). You
-should have Docker installed and the <a href="https://cms-opendata-workshop.github.io/workshop2023-lesson-docker/" class="external-link">Docker
-pre-exercises</a> finished so that you can access the containers
-<code>my_root</code> and <code>my_python</code> created as instructed
-there.</p>
+      <section id="setup"><p>This lesson requires several software packages common in high-energy
+physics. This exercise is intended to be used for Fermilab’s CMS Data
+Analysis School 2025. If you have completed the <a href="https://fnallpc.github.io/cms-das-pre-exercises/" class="external-link">pre-exercises</a>,
+go to the following CMSSW area and set the CMS environment to access
+these packages.</p>
+<p>Connect to the LPC cluster:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">kinit</span> <span class="op">&lt;</span>YourUsername<span class="op">&gt;</span>@FNAL.GOV               <span class="co"># if needed</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-XY</span> <span class="op">&lt;</span>your-username<span class="op">&gt;</span>@cmslpc-el8.fnal.gov</span></code></pre>
+</div>
+<p>Access your CMSSW environment:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">cd</span> ~/nobackup/cmsdas/CMSSW_13_0_10</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">cmsenv</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">mkdir</span> root-exercise</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="bu">cd</span> root-exercise/</span></code></pre>
+</div>
+<p>Now you are ready to do the steps of this exercise in your
+terminal!</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.

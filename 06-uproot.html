@@ -385,85 +385,61 @@ uproot and awkward tutorial</a></li>
 <a href="https://github.com/jpivarski-talks/2020-06-08-uproot-awkward-columnar-hats" class="external-link">Uproot,
 awkward, and columnar analysis</a> from Jim Pivarski.</li>
 </ul></section><section><h2 class="section-heading" id="how-to-type-these-commands">How to type these commands?<a class="anchor" aria-label="anchor" href="#how-to-type-these-commands"></a></h2>
-<hr class="half-width"><p>Now that you’ve installed the necessary python modules in your
-<code>my_python</code> container you can choose to write and execute the
-code however you like. There are a number of options, but we will point
-out two here.</p>
-<ul><li>
-<p><a href="https://jupyter.org/" class="external-link">Jupyter notebook</a>. This
-provides an editor and an evironment in which to run your python code.
-Often you will run the code one <em>cell</em> at a time, but you could
-always put all your code in one cell if you prefer. There are many, many
-tutorials out there on using Jupyter notebooks and if you chose to use
-Jupyter as your editing/executing environment that you have developed
-some familiarity with it.</p>
-<ul><li>In the <code>my_python</code> container, you can start
-<code>jupyter-lab</code> with</li>
-</ul><div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">jupyter-lab</span> <span class="at">--ip</span><span class="op">=</span>0.0.0.0 <span class="at">--no-browser</span></span></code></pre>
-</div>
-<p>and open the link given in the message on your browser. Choose the
-icon under “Notebook”.</p>
-</li>
-<li><p>Python scripts. In this approach, you edit the equivalent of a
-text file and then pass that text file into a python interpreter. For
-example, if you edited a file called <code>hello_world.py</code> such
-that it contained</p></li>
-</ul><div class="codewrapper sourceCode" id="cb2">
+<hr class="half-width"><p>There are many options for interacting with python scripts for CMS
+data analysis, including interactive tools like jupyter notebooks. In
+this exercise, we will stick to editing python scripts. For example, if
+you edited a file called <code>hello_world.py</code> such that it
+contained:</p>
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello world!"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello world!"</span>)</span></code></pre>
 </div>
-<p>You could save the file and then (perhaps in another Terminal
-window), execute</p>
-<div class="codewrapper sourceCode" id="cb3">
+<p>You could save the file and then execute:</p>
+<div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">python</span> hello_world.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">python</span> hello_world.py</span></code></pre>
 </div>
 <p>This would interpret your text file as python commands and produce
-the output</p>
+the output:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Hello world!</code></pre>
 </div>
-<p>We leave it to you to decide which approach you prefer.</p>
+<p>If you would prefer to use a jupyter notebook for these exercises, go
+to <a href="https://swan.web.cern.ch/swan/" class="external-link">CERN’s SWAN facility</a> and
+try the new interactive jupyter-lab interface (you can leave the other
+options to their defaults). From the options page, select a Python3
+notebook.</p>
 </section><section><h2 class="section-heading" id="open-a-file">Open a file<a class="anchor" aria-label="anchor" href="#open-a-file"></a></h2>
-<hr class="half-width"><p>Let’s open a ROOT file! If you’re writing a python script, let’s call
-it <code>open_root_file.py</code> and if you’re using a Jupyter
-notebook, let’s call it <code>open_root_file.ipynb</code>. If you are
-working in the container, you will open and <em>edit</em> the python
-script on your local computer and <em>run</em> it in the container, or
-you will open a notebook on your jupyter-lab window in the browser.</p>
+<hr class="half-width"><p>Let’s open a ROOT file! Call your script
+<code>open_root_file.py</code> and open it in your preferred text
+editor. On this webpage we will show small snippets of Python that you
+can add to your script one after the other, and run to see new
+output.</p>
 <p>First we will import the <code>uproot</code> library, as well as some
 other standard libraries. These can be the first lines of your python
-script or the first cell of your Jupyter notebook.</p>
-<p><em>If this is a script, you may want to run
-<code>python open_root_file.py</code> every few lines or so to see the
-output. If this is a Jupyter notebook, you will want to put each snippet
-of code in its own cell and execute them as you go to see the
-output.</em></p>
-<div class="codewrapper sourceCode" id="cb5">
+script:</p>
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pylab <span class="im">as</span> plt</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="im">import</span> uproot</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="im">import</span> awkward <span class="im">as</span> ak</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pylab <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="im">import</span> uproot</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="im">import</span> awkward <span class="im">as</span> ak</span></code></pre>
 </div>
 <p>Let’s open the file! We’ll make use of <code>uproot</code>s use of <a href="https://xrootd.slac.stanford.edu/" class="external-link">XRootD</a> to read in the file
 <em>over the network</em>. This will save us from having to download the
 file.</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>infile_name <span class="op">=</span> <span class="st">'root://eospublic.cern.ch//eos/opendata/cms/derived-data/AOD2NanoAODOutreachTool/ForHiggsTo4Leptons/SMHiggsToZZTo4L.root'</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>infile <span class="op">=</span> uproot.<span class="bu">open</span>(infile_name)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>infile_name <span class="op">=</span> <span class="st">'root://eospublic.cern.ch//eos/opendata/cms/derived-data/AOD2NanoAODOutreachTool/ForHiggsTo4Leptons/SMHiggsToZZTo4L.root'</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>infile <span class="op">=</span> uproot.<span class="bu">open</span>(infile_name)</span></code></pre>
 </div>
 <div id="download-the-file" class="callout">
 <div class="callout-square">
@@ -475,24 +451,23 @@ file.</p>
 <p>If too many people are trying to open the same file, it may be easier
 to download the file to your laptop. You can execute the following
 command in the bash terminal.</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>curl http:<span class="op">//</span>opendata.cern.ch<span class="op">/</span>record<span class="op">/</span><span class="dv">12361</span><span class="op">/</span>files<span class="op">/</span>SMHiggsToZZTo4L.root <span class="op">--</span>output SMHiggsToZZTo4L.root</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>curl http:<span class="op">//</span>opendata.cern.ch<span class="op">/</span>record<span class="op">/</span><span class="dv">12361</span><span class="op">/</span>files<span class="op">/</span>SMHiggsToZZTo4L.root <span class="op">--</span>output SMHiggsToZZTo4L.root</span></code></pre>
 </div>
 <p>Alternatively, you can follow <a href="https://opendata.cern.ch/record/12361" class="external-link">this link</a> to the data
 record on the CERN Open Data Portal. If you scroll down to the bottom of
 the page and click the <strong>Download</strong> button.</p>
 <p>For the remainder of this tutorial you will want the file to be in
-the same directory/folder as your python code, whether you are using a
-Jupyter notebook or a simple python script. So make sure you move this
-file to that location after you have downloaded it.</p>
+the same directory/folder as your python code. So make sure you move
+this file to that location after you have downloaded it.</p>
 <p>To read in the file, you’ll change one line to define the input file
 to be</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>infile_name <span class="op">=</span> <span class="st">'SMHiggsToZZTo4L.root'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>infile_name <span class="op">=</span> <span class="st">'SMHiggsToZZTo4L.root'</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -500,12 +475,12 @@ to be</p>
 </section><section><h2 class="section-heading" id="investigate-the-file">Investigate the file<a class="anchor" aria-label="anchor" href="#investigate-the-file"></a></h2>
 <hr class="half-width"><p>So you’ve opened the file with <code>uproot</code>. What is this
 <code>infile</code> object? Let’s add the following code</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(infile))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(infile))</span></code></pre>
 </div>
-<p>and we get</p>
+<p>and upon running the script we get</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -514,12 +489,12 @@ to be</p>
 <p>We can interface with this object similar to how we would interface
 with a <a href="https://www.w3schools.com/python/python_dictionaries.asp" class="external-link">python
 dictionary</a>.</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>keys <span class="op">=</span> infile.keys()</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="bu">print</span>(keys)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>keys <span class="op">=</span> infile.keys()</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="bu">print</span>(keys)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -527,12 +502,12 @@ dictionary</a>.</p>
 <pre class="output" tabindex="0"><code>['Events;1']</code></pre>
 </div>
 <p>But what is this?</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>events <span class="op">=</span> infile[<span class="st">'Events'</span>]</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(events))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>events <span class="op">=</span> infile[<span class="st">'Events'</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(events))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -541,13 +516,13 @@ dictionary</a>.</p>
 </div>
 <p>Ah, this is the <code>TTree</code> object that we learned a bit about
 in the previous episodes! Let’s see what’s in it!</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>branches <span class="op">=</span> infile[<span class="st">'Events'</span>].keys()</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="cf">for</span> branch <span class="kw">in</span> branches:</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>branch<span class="sc">:20s}</span><span class="ss"> </span><span class="sc">{</span>infile[<span class="st">'Events'</span>][branch]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>branches <span class="op">=</span> infile[<span class="st">'Events'</span>].keys()</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="cf">for</span> branch <span class="kw">in</span> branches:</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>branch<span class="sc">:20s}</span><span class="ss"> </span><span class="sc">{</span>infile[<span class="st">'Events'</span>][branch]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -586,22 +561,22 @@ MET_pt               &lt;TBranch 'MET_pt' at 0x7faa7445f550&gt;
 MET_phi              &lt;TBranch 'MET_phi' at 0x7faa7445fbe0&gt;</code></pre>
 </div>
 <p>There are multiple syntax you can access each of these branches.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>pt <span class="op">=</span> infile[<span class="st">'Events'</span>][<span class="st">'Muon_pt'</span>]</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="co"># or </span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>pt <span class="op">=</span> infile[<span class="st">'Events/Muon_pt'</span>]</span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="co"># or</span></span>
-<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>pt <span class="op">=</span> events.Muon_pt</span>
-<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co"># or</span></span>
-<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>pt <span class="op">=</span> events[<span class="st">'Muon_pt'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>pt <span class="op">=</span> infile[<span class="st">'Events'</span>][<span class="st">'Muon_pt'</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="co"># or </span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>pt <span class="op">=</span> infile[<span class="st">'Events/Muon_pt'</span>]</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>pt <span class="op">=</span> events.Muon_pt</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a>pt <span class="op">=</span> events[<span class="st">'Muon_pt'</span>]</span></code></pre>
 </div>
 <p>We’ll use that last one for this lesson just to save some typing.
 :)</p>
