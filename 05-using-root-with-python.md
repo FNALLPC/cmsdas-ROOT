@@ -40,53 +40,10 @@ data processing in python, and the scikit-HEP tools are very important for that 
 
 You can check out a tutorial for many of their tools [here](https://hsf-training.github.io/hsf-training-scikit-hep-webpage/). 
 
-## Using the Python docker container
-
-The tools in the Python docker container will allow you to can easily open
-and analyze ROOT files. This is useful for when you make use of the CMS open data tools to skim 
-some subset of the open data and then copy it to your local laptop, desktop, or perhaps an 
-HPC cluster at your home institution. 
-
-If you completed the [Docker pre-exercises](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/) 
-you should already have worked through 
-[this episode](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/03-docker-for-cms-opendata/index.html), under **Download the docker images for ROOT and python tools and start container**, and you will have
-
-- a working directory `cms_open_data_python` on your local computer
-- a docker container with name `my_python` created with the working directory `cms_open_data_python` mounted into the `/code` directory of the container.
-
-Start your python container with
-
-```bash
-docker start -i my_python
-```
-
-In the container, you will be in the `/code` directory and it shares the files with your local `cms_open_data_python` directory.
-
-:::::::::::: callout
-
-## If you're using apptainer:
-
-Whenever you see a `docker start` instruction, replace it with `apptainer shell` to open either the ROOT or Python container image.
-The specific commands in this pre-exercise and during the live workshop will be given for docker, since that is the most common application.
-As a general rule, editing of files will be done in the standard terminal (the containers do not have all text editors!) or via the jupyter-lab interface, and then commands will be executed inside the container shell. If you see `Singularity>` on your command line, you are ready to run a ROOT or python script.
-
-:::::::::::::
-
-If you want to test out the installation, from within Docker you can launch and 
-interactive python session by typing `python` (in Docker) and then trying
-
-```python
-import uproot
-import awkward as ak
-```
-
-If you don't get any errors then congratulations! You have a working environment and you are ready to
-perform some HEP analysis with your new python environment!
 
 :::::::::::::: keypoints
 
 - PyROOT is a complete interface to the ROOT libraries
 - Scikit-HEP provides tools to interface between ROOT and global scientific python tools
-- We will use `uproot`, `awkward`, and `vector` in our NanoAOD analysis
 
 ::::::::::::::

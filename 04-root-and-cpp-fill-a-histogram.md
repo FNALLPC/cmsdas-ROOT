@@ -29,7 +29,7 @@ we have to a new file, `fill_histogram.cc`.
 cp read_ROOT_file.cc fill_histogram.cc
 ```
 
-Into this file, we'll add some lines at some key spots. Again, use your favourite editor on your local computer. For now, we'll go through those lines
+Into this file, we'll add some lines at some key spots. For now, we'll go through those lines
 of code individually, and then show you the completed file at the end to see where they went.
 
 First we need to include the header file for the ROOT [TH1F](https://root.cern.ch/doc/master/classTH1F.html) class.
@@ -193,7 +193,7 @@ clean:
     rm -f ./*~ ./*.o ./fill_histogram
 ```
 
-And then compile and run it, remember to do it in the container!
+And then compile and run it:
 
 ```bash
 make fill_histogram
@@ -202,14 +202,6 @@ make fill_histogram
 
 The output on the screen should not look different. However, if you list the contents of the directory,
 you'll see a new file, `output.root`!
-
-If you are using a container with VNC, now it is time to start the graphics window with
-
-```bash
-start_vnc
-```
-
-and connect to it with the default password `cms.cern`.
 
 To inspect this new ROOT file, we'll launch CINT for the first time and create a
 [`TBrowser` object](https://root.cern.ch/doc/master/classTBrowser.html).
@@ -234,7 +226,8 @@ to inspect ROOT files. Inside this CINT environment, type the following
 root [1] TBrowser b;
 ```
 
-You should see the `TBrowser` pop up!
+You should see the `TBrowser` pop up! If no browser pops up, check out the [uscms.org page about the LPC](https://uscms.org/uscms_at_work/computing/getstarted/uaf.shtml)
+to troubleshoot your X11 connection, or ask for help on Mattermost.
 
 :::::::::::::::::::: callout
 
@@ -269,7 +262,7 @@ Open the `tree.root` file with ROOT:
 root -l tree.root
 ```
 
-Now, dump the content of the `t1` tree with the method `Print`.  Note that, by opening the file, the ROOT tree in there is automatically loaded.
+You can dump the content of the `t1` tree with the method `Print`.  Note that, by opening the file, the ROOT tree in there is automatically loaded.
 
 ```cpp
 root [0]
@@ -277,8 +270,7 @@ Attaching file tree.root as _file0...
 root [1] t1->Print()
 ```
 
-Please copy the output this statement generates and paste it into the corresponding section in our [assignment form](https://docs.google.com/forms/d/e/1FAIpQLSdxsc-aIWqUyFA0qTsnbfQrA6wROtAxC5Id4sxH08STTl8e5w/viewform); remember you must sign in and <strong style="color: red;">click on the submit button</strong> in order to save your work.  You can go back to edit the form at any time.
-Then, quit ROOT.
+When you're done, quit ROOT.
 
 ::::::::::::::::::::::::::::::::
 
@@ -417,8 +409,6 @@ You'll be popped into the CINT environment and you should see the following plot
 ![](fig/h_pt.png)
 
 ::::::::::::
-
-Exit from the container. If you are using a container with VNC, first stop VNC with `stop_vnc`.
 
 ::::::::::::::::: keypoints
 

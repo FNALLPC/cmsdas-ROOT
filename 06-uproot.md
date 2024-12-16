@@ -32,56 +32,35 @@ from Jim Pivarski.
 
 ## How to type these commands?
 
-Now that you've installed the necessary python modules in your `my_python` container you can choose to write and execute the code however 
-you like. There are a number of options, but we will point out two here. 
-
-* [Jupyter notebook](https://jupyter.org/). This provides an editor and an evironment in which to run
-your python code. Often you will run the code one *cell* at a time, but you could always put all your 
-code in one cell if you prefer. There are many, many tutorials out there on using Jupyter notebooks
-and if you chose to use Jupyter as your editing/executing environment that you have developed some
-familiarity with it. 
-
-  * In the `my_python` container, you can start `jupyter-lab` with
-  ```bash
-  jupyter-lab --ip=0.0.0.0 --no-browser
-  ```
-  and open the link given in the message on your browser. Choose the icon under "Notebook". 
-
-* Python scripts. In this approach, you edit the equivalent of a text file and then pass that text
-file into a python interpreter. For example, if you edited a file called `hello_world.py` such that
-it contained
+There are many options for interacting with python scripts for CMS data analysis, including interactive tools like jupyter notebooks.
+In this exercise, we will stick to editing python scripts. For example, if you edited a file called `hello_world.py` such that
+it contained:
 
 ```python
 print("Hello world!")
 ```
 
-You could save the file and then (perhaps in another Terminal window), execute
+You could save the file and then execute:
 
 ```bash
 python hello_world.py
 ```
 
-This would interpret your text file as python commands and produce the output
+This would interpret your text file as python commands and produce the output:
 
 ```output
 Hello world!
 ```
-We leave it to you to decide which approach you prefer.
 
+If you would prefer to use a jupyter notebook for these exercises, go to [CERN's SWAN facility](https://swan.web.cern.ch/swan/) and try the new interactive jupyter-lab interface (you can leave the other options to their defaults). From the options page, select a Python3 notebook.
 
 ## Open a file
 
 Let's open a ROOT file! 
-If you're writing a python script, let's call it `open_root_file.py` and if you're using
-a Jupyter notebook, let's call it `open_root_file.ipynb`. If you are working in the container, you will open and *edit* the python script on your local computer and *run* it in the container, or you will open a notebook on your jupyter-lab window in the browser.
+Call your script `open_root_file.py` and open it in your preferred text editor. On this webpage we will show small snippets of Python that you can add to your script one after the other, and run to see new output. 
 
 First we will import the `uproot` library, as well as some other standard
-libraries. These can be the first lines of your python script or the first cell of your Jupyter notebook.
-
-*If this is a script, you may want to run `python open_root_file.py` every few lines or so to see the output.
-If this is a Jupyter notebook, you will want to put each snippet of code in its own cell and execute
-them as you go to see the output.*
-
+libraries. These can be the first lines of your python script:
 
 ```python
 import numpy as np
@@ -115,8 +94,7 @@ on the CERN Open Data Portal. If you scroll down to the bottom of the page and c
 the **Download** button. 
 
 For the remainder of this tutorial you will want the file to be in the same directory/folder
-as your python code, whether you are using a Jupyter notebook or a simple python script. So make
-sure you move this file to that location after you have downloaded it. 
+as your python code. So make sure you move this file to that location after you have downloaded it. 
 
 To read in the file, you'll change one line to define the input file to be
 ```python
@@ -132,7 +110,7 @@ So you've opened the file with `uproot`. What is this `infile` object? Let's add
 print(type(infile))
 ```
 
-and we get
+and upon running the script we get
 
 ```output
 <class 'uproot.reading.ReadOnlyDirectory'>

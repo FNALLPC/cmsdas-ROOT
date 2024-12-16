@@ -37,7 +37,7 @@ of your file.
 
 ## Environment
 
-Use the Python environment that you set up in the previous two lesson pages, such as your `my_python` docker container.
+Use the Python environment that you set up in the previous two lesson pages.
 We leave it up to you whether or not you write and execute this code in a script or as a Jupyter notebook.
 
 ## Numpy arrays: a review
@@ -152,7 +152,7 @@ or by downloading it.
 ## *Stop!* 
 
 If you haven't already, make sure you have run through the 
-[previous lesson](https://cms-opendata-workshop.github.io/workshop2024-lesson-cpp-root-python/06-uproot/index.html) on working with uproot.
+[previous lesson](06-uproot.md) on working with uproot.
 ::::::::::::::::::::::::
 
 Let's open this ROOT file! If you're writing a python script, let's call it `open_root_file_and_analyze_data.py` and if you're using
