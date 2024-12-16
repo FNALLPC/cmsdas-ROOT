@@ -79,14 +79,6 @@ for a separate workshop, but much of the material is relevant for the Open Data 
 to complete the tutorial.
 * [ROOT tutorial from Nevis Lab (Columbia Univ.)](https://www.nevis.columbia.edu/~seligman/root-class/). Very complete and always up-to-date tutorial from our friends at Columbia.
 
-::::::::::::::::::: callout
-## Be in the container!
-For this episode, you'll still be running your code from the `my_root` docker container
-that you launched in the previous episode.
-
-As you edit the files though, you may want to do the editing from your *local* environment, 
-so that you have access to your preferred editors.
-:::::::::::::::::::::
 
 ## ROOT terminology
 
@@ -434,12 +426,12 @@ of what you just ran.
 Huzzah! You've successfully written your first ROOT file!
 
 :::::::::::::::::::: callout
-## Will I have to `make` my Open Data analysis code?
+## Will I have to `make` my analysis code?
 
 Maybe!
 
 - If you prefer to write your end-level analysis code in C++, your `make` setup will be very similar to this exercise
-- If you are analyzing AOD or MiniAOD data and using the dedicated CMS software, a configuration and build system called [SCRAM](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideScram) is used for this purpose of compiling and linking code.
+- If you are analyzing AOD or MiniAOD data and using CMSSW software, a configuration and build system called [SCRAM](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideScram) is used for this purpose of compiling and linking code.
 - If you only analyze NanoAOD samples and do so in python (see the upcoming lesson pages!), then you will not use `make`
 ::::::::::::::::::::::
 
@@ -639,7 +631,7 @@ clean:
     rm -f ./*~ ./*.o ./read_ROOT_file
 ```
 
-We can now compile and run the code in your `my_root` container shell!
+We can now compile and run the code!
 
 ```bash
 make read_ROOT_file
@@ -691,7 +683,7 @@ still using the C++ syntax.
 
 :::::::::::::::::::::::::::::: keypoints
 
-- ROOT defines the file format in which all of the CMS Open Data is stored.
+- ROOT defines the file format in which all of the CMS data is stored.
 - These files can be accessed quickly using C++ code and the relevant information can be dumped out into other formats.
 
 ::::::::::::::::::::::::::::::

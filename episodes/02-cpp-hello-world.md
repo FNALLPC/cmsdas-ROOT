@@ -16,44 +16,12 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Setting up your working area
-
-If you completed the [Docker pre-exercises](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/) 
-you should already have worked through 
-[this episode](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/03-docker-for-cms-opendata/index.html), under **Download the docker images for ROOT and python tools and start container**, and you will have
-
-- a working directory `cms_open_data_root` on your local computer
-- a docker container with name `my_root` created with the working directory `cms_open_data_root` mounted into the `/code` directory of the container.
-
-Start your ROOT container with
-
-```bash
-docker start -i my_root
-```
-
-In the container, you will be in the `/code` directory and it shares the files with your local `cms_open_data_root` directory.
-
-:::::::::::: callout
-
-## If you're using apptainer:
-
-Whenever you see a `docker start` instruction, replace it with `apptainer shell` to open either the ROOT or Python container image.
-The specific commands in this pre-exercise and during the live workshop will be given for docker, since that is the most common application.
-As a general rule, editing of files will be done in the standard terminal (the containers do not have all text editors!) or via the jupyter-lab interface, and then commands will be executed inside the container shell. If you see `Singularity>` on your command line, you are ready to run a ROOT or python script.
-
-:::::::::::::
-
 ## Your first C/C++ program (Optional Review!)
 
 Let's start with writing a simple `hello world` program in C. First we'll edit the
-*source* code with an editor of your choice. 
-
-Note that you will
-*edit* the file in a local terminal on your computer and then *run* the file 
-in the Docker environment. This is because we mounted the `cms_open_data_root` directory
-on your local disk such that it is visible inside the Docker container.
-
-Let's create a new file called `hello_world.cc` in the `cms_open_data_root` directory, using your preferred editor. 
+*source* code with an editor of your choice.
+Go to your [working directory for this exercise](../learners/setup.md), and let's create a
+new file called `hello_world.cc`, using your preferred editor. 
 
 The first thing we need to do, is `include` some standard libraries. These libraries
 allow us to access the C and C++ commands to print to the screen (`stdout` and `stderr`) as
@@ -163,7 +131,7 @@ Hello world! This uses the C++ 'iostream' library to direct output to standard o
 Hello world! This uses the C++ 'iostream' library to direct output to standard error.
 ```
 
-When you are working with the Open Data, you will be looping over events
+When you are working with CMS data, you might be looping over events
 and may find yourself making selections based on certain physics criteria.
 To that end, you may want to familiarize yourself with the C++ syntax for
 [loops](https://www.w3schools.com/cpp/cpp_for_loop.asp)

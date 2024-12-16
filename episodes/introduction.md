@@ -54,7 +54,7 @@ tutorials, for those who want to go further.
 ::::::::::::::::::::::::::::: callout
 ## You still have choices!
 
-Just to emphasize, you really only *need* to use ROOT and C++ at the early stages of analyzing CMS Open Data in the AOD (Run 1) or MiniAOD (Run 2) formats. These datasets require using CMS-provided tools that perform much better in C++ than python. However, downstream in your analysis or to analyze Run 2 NanoAOD files, you are welcome to use whatever tools and file formats you choose.
+Just to emphasize, you really only *need* to use ROOT and C++ at the early stages of analyzing CMS Open Data in the AOD (Run 1) or MiniAOD (Run 2 or Run 3) formats. These datasets require using CMS-provided tools that perform much better in C++ than python. However, downstream in your analysis or to analyze NanoAOD files, you are welcome to use whatever tools and file formats you choose.
 :::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
