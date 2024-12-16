@@ -15,10 +15,10 @@ carpentry: 'incubator'
 varnish: 'cms-opendata-workshop/varnish'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'ROOT for CMS Data Analysis' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 2024-12-16 # FIXME
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, CMS' # FIXME
@@ -37,7 +37,7 @@ source: 'https://github.com/cms-opendata-workshop/workbench-template-md' # FIXME
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'cms-dpoa-coordinator@cern.ch' # FIXME
+contact: 'jmhogan806@gmail.com' # FIXME
 
 # Navigation ------------------------------------------------
 #
@@ -64,9 +64,16 @@ contact: 'cms-dpoa-coordinator@cern.ch' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- 02-cpp-hello-world.md
+- 03-root-and-cpp-read-and-write.md
+- 04-root-and-cpp-fill-a-histogram.md
+- 05-using-root-with-python.md
+- 06-uproot.md
+- 07-awkward.md
 
 # Information for Learners
 learners: 
+- setup.md
 
 # Information for Instructors
 instructors: 
