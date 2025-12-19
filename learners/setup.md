@@ -8,7 +8,7 @@ Connect to the LPC cluster:
 
 ```bash
 kinit <YourUsername>@FNAL.GOV               # if needed
-ssh -XY <your-username>@cmslpc-el8.fnal.gov
+ssh -XY <your-username>@cmslpc-el9.fnal.gov
 ```
 
 Access your CMSSW environment:
