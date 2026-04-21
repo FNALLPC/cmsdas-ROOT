@@ -231,7 +231,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#why-root">Why ROOT?</a></li>
 <li><a href="#interfacing-with-root">Interfacing with ROOT</a></li>
@@ -471,13 +471,13 @@ or download it directly with <code>wget</code> to you working directory
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/cms-opendata-workshop/workshop2022-lesson-cpp-root-python/gh-pages/data/root_and_cpp_tutorial_source_code.tgz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/cms-opendata-workshop/workshop2022-lesson-cpp-root-python/gh-pages/data/root_and_cpp_tutorial_source_code.tgz</span></code></pre>
 </div>
 <p>Untar the file with:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> root_and_cpp_tutorial_source_code.tgz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> root_and_cpp_tutorial_source_code.tgz</span></code></pre>
 </div>
 <p>It will create a directory called
 <code>root_and_cpp_tutorial_source_code</code> with the files in it.</p>
@@ -494,14 +494,14 @@ files, both the standard C++ ones and some new ROOT-specific ones.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span></code></pre>
 </div>
 <p>Note the inclusion of <code>TRandom.h</code>, which we’ll be using to
 generate some random data for our test file.</p>
@@ -512,15 +512,15 @@ comments, which in the C++ syntax are preceded by two slashes,
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    <span class="co">// Create a ROOT file, f.</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="co">// The first argument, "tree.root" is the name of the file.</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="co">// The second argument, "recreate", will recreate the file, even if it already exists.</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">,</span><span class="st">"recreate"</span><span class="op">);</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>    <span class="co">// Create a ROOT file, f.</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>    <span class="co">// The first argument, "tree.root" is the name of the file.</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    <span class="co">// The second argument, "recreate", will recreate the file, even if it already exists.</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>    TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">,</span><span class="st">"recreate"</span><span class="op">);</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a><span class="op">}</span></span></code></pre>
 </div>
 <p>Now we define the <code>TTree</code> object which will hold all of
 our variables and the data they represent.</p>
@@ -531,10 +531,10 @@ Subsequent edits will also follow the previous edit but come before
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>    <span class="co">// A TTree object called t1.</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="co">// The first argument is the name of the object as stored by ROOT.</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="co">// The second argument is a short descriptor.</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    TTree t1<span class="op">(</span><span class="st">"t1"</span><span class="op">,</span><span class="st">"A simple Tree with simple variables"</span><span class="op">);</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>    <span class="co">// A TTree object called t1.</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>    <span class="co">// The first argument is the name of the object as stored by ROOT.</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>    <span class="co">// The second argument is a short descriptor.</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>    TTree t1<span class="op">(</span><span class="st">"t1"</span><span class="op">,</span><span class="st">"A simple Tree with simple variables"</span><span class="op">);</span></span></code></pre>
 </div>
 <p>For this example, we’ll assume we’re recording the missing transverse
 energy, which means there is only one value recorded for each event.</p>
@@ -551,27 +551,27 @@ and architecture.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>   <span class="dt">Float_t</span> met<span class="op">;</span> <span class="co">// Missing energy in the transverse direction.</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>   <span class="dt">Int_t</span> njets<span class="op">;</span> <span class="co">// Necessary to keep track of the number of jets</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>   <span class="co">// We'll define these assuming we will not write information for</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>   <span class="co">// more than 16 jets. We'll have to check for this in the code otherwise</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>   <span class="co">// it could crash!</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>   <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>   <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>   <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a>   <span class="dt">Float_t</span> met<span class="op">;</span> <span class="co">// Missing energy in the transverse direction.</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a>   <span class="dt">Int_t</span> njets<span class="op">;</span> <span class="co">// Necessary to keep track of the number of jets</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1" aria-label="code-block-6-5"></a>   <span class="co">// We'll define these assuming we will not write information for</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1" aria-label="code-block-6-6"></a>   <span class="co">// more than 16 jets. We'll have to check for this in the code otherwise</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1" aria-label="code-block-6-7"></a>   <span class="co">// it could crash!</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1" aria-label="code-block-6-8"></a>   <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1" aria-label="code-block-6-9"></a>   <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1" aria-label="code-block-6-10"></a>   <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span></code></pre>
 </div>
 <p>We now define the <code>TBranch</code> for the <code>met</code>
 variable.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>    <span class="co">// The first argument is ROOT's internal name of the variable.</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co">// The second argument is the *address* of the actual variable we defined above</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="co">// The third argument defines the *type* of the variable to be stored, and the "F"</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="co">// at the end signifies that this is a float</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"met"</span><span class="op">,&amp;</span>met<span class="op">,</span><span class="st">"met/F"</span><span class="op">);</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a>    <span class="co">// The first argument is ROOT's internal name of the variable.</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a>    <span class="co">// The second argument is the *address* of the actual variable we defined above</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a>    <span class="co">// The third argument defines the *type* of the variable to be stored, and the "F"</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a>    <span class="co">// at the end signifies that this is a float</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1" aria-label="code-block-7-5"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"met"</span><span class="op">,&amp;</span>met<span class="op">,</span><span class="st">"met/F"</span><span class="op">);</span></span></code></pre>
 </div>
 <p>Next we define the <code>TBranch</code>es for each of the other
 variables, but the syntax is slightly different as these are acting as
@@ -579,51 +579,51 @@ arrays with a varying number of entries for each event.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>    <span class="co">// First we define njets where the syntax is the same as before,</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="co">// except we take care to identify this as an integer with the final</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="co">// /I designation</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"njets"</span><span class="op">,&amp;</span>njets<span class="op">,</span><span class="st">"njets/I"</span><span class="op">);</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    <span class="co">// We can now define the other variables, but we use a slightly different</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>    <span class="co">// syntax for the third argument to identify the variable that will be used</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>    <span class="co">// to count the number of entries per event</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"pt"</span><span class="op">,&amp;</span>pt<span class="op">,</span><span class="st">"pt[njets]/F"</span><span class="op">);</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"eta"</span><span class="op">,&amp;</span>eta<span class="op">,</span><span class="st">"eta[njets]/F"</span><span class="op">);</span></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"phi"</span><span class="op">,&amp;</span>phi<span class="op">,</span><span class="st">"phi[njets]/F"</span><span class="op">);</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a>    <span class="co">// First we define njets where the syntax is the same as before,</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a>    <span class="co">// except we take care to identify this as an integer with the final</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a>    <span class="co">// /I designation</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1" aria-label="code-block-8-4"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"njets"</span><span class="op">,&amp;</span>njets<span class="op">,</span><span class="st">"njets/I"</span><span class="op">);</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1" aria-label="code-block-8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1" aria-label="code-block-8-6"></a>    <span class="co">// We can now define the other variables, but we use a slightly different</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1" aria-label="code-block-8-7"></a>    <span class="co">// syntax for the third argument to identify the variable that will be used</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1" aria-label="code-block-8-8"></a>    <span class="co">// to count the number of entries per event</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1" aria-label="code-block-8-9"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"pt"</span><span class="op">,&amp;</span>pt<span class="op">,</span><span class="st">"pt[njets]/F"</span><span class="op">);</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1" aria-label="code-block-8-10"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"eta"</span><span class="op">,&amp;</span>eta<span class="op">,</span><span class="st">"eta[njets]/F"</span><span class="op">);</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1" aria-label="code-block-8-11"></a>    t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"phi"</span><span class="op">,&amp;</span>phi<span class="op">,</span><span class="st">"phi[njets]/F"</span><span class="op">);</span></span></code></pre>
 </div>
 <p>OK, we’ve defined where everything will be stored! Let’s now generate
 1000 mock events.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="dt">Int_t</span> nevents <span class="op">=</span> <span class="dv">1000</span><span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>        <span class="co">// Generate random number between 10-60 (arbitrary)</span></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>        met <span class="op">=</span> <span class="dv">50</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">+</span> <span class="dv">10</span><span class="op">;</span></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>        <span class="co">// Generate random number between 0-5, inclusive</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>        njets <span class="op">=</span> gRandom<span class="op">-&gt;</span>Integer<span class="op">(</span><span class="dv">6</span><span class="op">);</span></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span>njets<span class="op">;</span>j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>            pt<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">100</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>            eta<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">6</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>            phi<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="fl">6.28</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">-</span> <span class="fl">3.14</span><span class="op">;</span></span>
-<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a></span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>        <span class="co">// After each event we need to *fill* the TTree</span></span>
-<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a>        t1<span class="op">.</span>Fill<span class="op">();</span></span>
-<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>    <span class="co">// After we've run over all the events, we "change directory" (cd) to the file object</span></span>
-<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a>    <span class="co">// and write the tree to it.</span></span>
-<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a>    <span class="co">// We can also print the tree, just as a visual identifier to ourselves that</span></span>
-<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a>    <span class="co">// the program ran to completion.</span></span>
-<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a>    f<span class="op">.</span>cd<span class="op">();</span></span>
-<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a>    t1<span class="op">.</span>Write<span class="op">();</span></span>
-<span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a>    t1<span class="op">.</span>Print<span class="op">();</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a>    <span class="dt">Int_t</span> nevents <span class="op">=</span> <span class="dv">1000</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1" aria-label="code-block-9-4"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1" aria-label="code-block-9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1" aria-label="code-block-9-6"></a>        <span class="co">// Generate random number between 10-60 (arbitrary)</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1" aria-label="code-block-9-7"></a>        met <span class="op">=</span> <span class="dv">50</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">+</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1" aria-label="code-block-9-8"></a></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1" aria-label="code-block-9-9"></a>        <span class="co">// Generate random number between 0-5, inclusive</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1" aria-label="code-block-9-10"></a>        njets <span class="op">=</span> gRandom<span class="op">-&gt;</span>Integer<span class="op">(</span><span class="dv">6</span><span class="op">);</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1" aria-label="code-block-9-11"></a></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1" aria-label="code-block-9-12"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span>njets<span class="op">;</span>j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1" aria-label="code-block-9-13"></a>            pt<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">100</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1" aria-label="code-block-9-14"></a>            eta<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">6</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1" aria-label="code-block-9-15"></a>            phi<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="fl">6.28</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">-</span> <span class="fl">3.14</span><span class="op">;</span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1" aria-label="code-block-9-16"></a>        <span class="op">}</span></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1" aria-label="code-block-9-17"></a></span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1" aria-label="code-block-9-18"></a>        <span class="co">// After each event we need to *fill* the TTree</span></span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1" aria-label="code-block-9-19"></a>        t1<span class="op">.</span>Fill<span class="op">();</span></span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1" aria-label="code-block-9-20"></a>    <span class="op">}</span></span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1" aria-label="code-block-9-21"></a></span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1" aria-label="code-block-9-22"></a>    <span class="co">// After we've run over all the events, we "change directory" (cd) to the file object</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1" aria-label="code-block-9-23"></a>    <span class="co">// and write the tree to it.</span></span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1" aria-label="code-block-9-24"></a>    <span class="co">// We can also print the tree, just as a visual identifier to ourselves that</span></span>
+<span id="cb9-25"><a href="#cb9-25" tabindex="-1" aria-label="code-block-9-25"></a>    <span class="co">// the program ran to completion.</span></span>
+<span id="cb9-26"><a href="#cb9-26" tabindex="-1" aria-label="code-block-9-26"></a>    f<span class="op">.</span>cd<span class="op">();</span></span>
+<span id="cb9-27"><a href="#cb9-27" tabindex="-1" aria-label="code-block-9-27"></a>    t1<span class="op">.</span>Write<span class="op">();</span></span>
+<span id="cb9-28"><a href="#cb9-28" tabindex="-1" aria-label="code-block-9-28"></a>    t1<span class="op">.</span>Print<span class="op">();</span></span></code></pre>
 </div>
 <p>The full <code>write_ROOT_file.cc</code> should now look like
 this:</p>
@@ -635,91 +635,91 @@ this:</p>
   Full source code file for write_ROOT_file.cc
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>   <span class="co">// Create a ROOT file, f.</span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>   <span class="co">// The first argument, "tree.root" is the name of the file.</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>   <span class="co">// The second argument, "recreate", will recreate the file, even if it already exists.</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>   TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">,</span> <span class="st">"recreate"</span><span class="op">);</span></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>   <span class="co">// A TTree object called t1.</span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>   <span class="co">// The first argument is the name of the object as stored by ROOT.</span></span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>   <span class="co">// The second argument is a short descriptor.</span></span>
-<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a>   TTree t1<span class="op">(</span><span class="st">"t1"</span><span class="op">,</span> <span class="st">"A simple Tree with simple variables"</span><span class="op">);</span></span>
-<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a>   <span class="dt">Float_t</span> met<span class="op">;</span> <span class="co">// Missing energy in the transverse direction.</span></span>
-<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a></span>
-<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a>   <span class="dt">Int_t</span> njets<span class="op">;</span> <span class="co">// Necessary to keep track of the number of jets</span></span>
-<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a></span>
-<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a>   <span class="co">// We'll define these assuming we will not write information for</span></span>
-<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a>   <span class="co">// more than 16 jets. We'll have to check for this in the code otherwise</span></span>
-<span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a>   <span class="co">// it could crash!</span></span>
-<span id="cb10-29"><a href="#cb10-29" tabindex="-1"></a>   <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb10-30"><a href="#cb10-30" tabindex="-1"></a>   <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb10-31"><a href="#cb10-31" tabindex="-1"></a>   <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a></span>
-<span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a>   <span class="co">// The first argument is ROOT's internal name of the variable.</span></span>
-<span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a>   <span class="co">// The second argument is the *address* of the actual variable we defined above</span></span>
-<span id="cb10-35"><a href="#cb10-35" tabindex="-1"></a>   <span class="co">// The third argument defines the *type* of the variable to be stored, and the "F"</span></span>
-<span id="cb10-36"><a href="#cb10-36" tabindex="-1"></a>   <span class="co">// at the end signifies that this is a float</span></span>
-<span id="cb10-37"><a href="#cb10-37" tabindex="-1"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"met"</span><span class="op">,&amp;</span>met<span class="op">,</span><span class="st">"met/F"</span><span class="op">);</span></span>
-<span id="cb10-38"><a href="#cb10-38" tabindex="-1"></a></span>
-<span id="cb10-39"><a href="#cb10-39" tabindex="-1"></a>   <span class="co">// First we define njets where the syntax is the same as before,</span></span>
-<span id="cb10-40"><a href="#cb10-40" tabindex="-1"></a>   <span class="co">// except we take care to identify this as an integer with the final</span></span>
-<span id="cb10-41"><a href="#cb10-41" tabindex="-1"></a>   <span class="co">// /I designation</span></span>
-<span id="cb10-42"><a href="#cb10-42" tabindex="-1"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"njets"</span><span class="op">,</span> <span class="op">&amp;</span>njets<span class="op">,</span> <span class="st">"njets/I"</span><span class="op">);</span></span>
-<span id="cb10-43"><a href="#cb10-43" tabindex="-1"></a></span>
-<span id="cb10-44"><a href="#cb10-44" tabindex="-1"></a>   <span class="co">// We can now define the other variables, but we use a slightly different</span></span>
-<span id="cb10-45"><a href="#cb10-45" tabindex="-1"></a>   <span class="co">// syntax for the third argument to identify the variable that will be used</span></span>
-<span id="cb10-46"><a href="#cb10-46" tabindex="-1"></a>   <span class="co">// to count the number of entries per event</span></span>
-<span id="cb10-47"><a href="#cb10-47" tabindex="-1"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"pt"</span><span class="op">,</span> <span class="op">&amp;</span>pt<span class="op">,</span> <span class="st">"pt[njets]/F"</span><span class="op">);</span></span>
-<span id="cb10-48"><a href="#cb10-48" tabindex="-1"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"eta"</span><span class="op">,</span> <span class="op">&amp;</span>eta<span class="op">,</span> <span class="st">"eta[njets]/F"</span><span class="op">);</span></span>
-<span id="cb10-49"><a href="#cb10-49" tabindex="-1"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"phi"</span><span class="op">,</span> <span class="op">&amp;</span>phi<span class="op">,</span> <span class="st">"phi[njets]/F"</span><span class="op">);</span></span>
-<span id="cb10-50"><a href="#cb10-50" tabindex="-1"></a></span>
-<span id="cb10-51"><a href="#cb10-51" tabindex="-1"></a>   <span class="dt">Int_t</span> nevents <span class="op">=</span> <span class="dv">1000</span><span class="op">;</span></span>
-<span id="cb10-52"><a href="#cb10-52" tabindex="-1"></a></span>
-<span id="cb10-53"><a href="#cb10-53" tabindex="-1"></a>   <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb10-54"><a href="#cb10-54" tabindex="-1"></a></span>
-<span id="cb10-55"><a href="#cb10-55" tabindex="-1"></a>       <span class="co">// Generate random number between 10-60 (arbitrary)</span></span>
-<span id="cb10-56"><a href="#cb10-56" tabindex="-1"></a>       met <span class="op">=</span> <span class="dv">50</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">+</span> <span class="dv">10</span><span class="op">;</span></span>
-<span id="cb10-57"><a href="#cb10-57" tabindex="-1"></a></span>
-<span id="cb10-58"><a href="#cb10-58" tabindex="-1"></a>       <span class="co">// Generate random number between 0-5, inclusive</span></span>
-<span id="cb10-59"><a href="#cb10-59" tabindex="-1"></a>       njets <span class="op">=</span> gRandom<span class="op">-&gt;</span>Integer<span class="op">(</span><span class="dv">6</span><span class="op">);</span></span>
-<span id="cb10-60"><a href="#cb10-60" tabindex="-1"></a></span>
-<span id="cb10-61"><a href="#cb10-61" tabindex="-1"></a>       <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span>njets<span class="op">;</span>j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb10-62"><a href="#cb10-62" tabindex="-1"></a>           pt<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">100</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
-<span id="cb10-63"><a href="#cb10-63" tabindex="-1"></a>           eta<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">6</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
-<span id="cb10-64"><a href="#cb10-64" tabindex="-1"></a>           phi<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="fl">6.28</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">-</span> <span class="fl">3.14</span><span class="op">;</span></span>
-<span id="cb10-65"><a href="#cb10-65" tabindex="-1"></a>       <span class="op">}</span></span>
-<span id="cb10-66"><a href="#cb10-66" tabindex="-1"></a></span>
-<span id="cb10-67"><a href="#cb10-67" tabindex="-1"></a>       <span class="co">// After each event we need to *fill* the TTree</span></span>
-<span id="cb10-68"><a href="#cb10-68" tabindex="-1"></a>       t1<span class="op">.</span>Fill<span class="op">();</span></span>
-<span id="cb10-69"><a href="#cb10-69" tabindex="-1"></a>   <span class="op">}</span></span>
-<span id="cb10-70"><a href="#cb10-70" tabindex="-1"></a></span>
-<span id="cb10-71"><a href="#cb10-71" tabindex="-1"></a>   <span class="co">// After we've run over all the events, we "change directory" to the file object</span></span>
-<span id="cb10-72"><a href="#cb10-72" tabindex="-1"></a>   <span class="co">// and write the tree to it.</span></span>
-<span id="cb10-73"><a href="#cb10-73" tabindex="-1"></a>   <span class="co">// We can also print the tree, just as a visual identifier to ourselves that</span></span>
-<span id="cb10-74"><a href="#cb10-74" tabindex="-1"></a>   <span class="co">// the program ran to completion.</span></span>
-<span id="cb10-75"><a href="#cb10-75" tabindex="-1"></a>   f<span class="op">.</span>cd<span class="op">();</span></span>
-<span id="cb10-76"><a href="#cb10-76" tabindex="-1"></a>   t1<span class="op">.</span>Write<span class="op">();</span></span>
-<span id="cb10-77"><a href="#cb10-77" tabindex="-1"></a>   t1<span class="op">.</span>Print<span class="op">();</span></span>
-<span id="cb10-78"><a href="#cb10-78" tabindex="-1"></a>   </span>
-<span id="cb10-79"><a href="#cb10-79" tabindex="-1"></a>   <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb10-80"><a href="#cb10-80" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1" aria-label="code-block-10-2"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1" aria-label="code-block-10-3"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1" aria-label="code-block-10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1" aria-label="code-block-10-5"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1" aria-label="code-block-10-6"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1" aria-label="code-block-10-7"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1" aria-label="code-block-10-8"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1" aria-label="code-block-10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1" aria-label="code-block-10-10"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1" aria-label="code-block-10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1" aria-label="code-block-10-12"></a>   <span class="co">// Create a ROOT file, f.</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1" aria-label="code-block-10-13"></a>   <span class="co">// The first argument, "tree.root" is the name of the file.</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1" aria-label="code-block-10-14"></a>   <span class="co">// The second argument, "recreate", will recreate the file, even if it already exists.</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1" aria-label="code-block-10-15"></a>   TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">,</span> <span class="st">"recreate"</span><span class="op">);</span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1" aria-label="code-block-10-16"></a></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1" aria-label="code-block-10-17"></a>   <span class="co">// A TTree object called t1.</span></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1" aria-label="code-block-10-18"></a>   <span class="co">// The first argument is the name of the object as stored by ROOT.</span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1" aria-label="code-block-10-19"></a>   <span class="co">// The second argument is a short descriptor.</span></span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1" aria-label="code-block-10-20"></a>   TTree t1<span class="op">(</span><span class="st">"t1"</span><span class="op">,</span> <span class="st">"A simple Tree with simple variables"</span><span class="op">);</span></span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1" aria-label="code-block-10-21"></a></span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1" aria-label="code-block-10-22"></a>   <span class="dt">Float_t</span> met<span class="op">;</span> <span class="co">// Missing energy in the transverse direction.</span></span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1" aria-label="code-block-10-23"></a></span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1" aria-label="code-block-10-24"></a>   <span class="dt">Int_t</span> njets<span class="op">;</span> <span class="co">// Necessary to keep track of the number of jets</span></span>
+<span id="cb10-25"><a href="#cb10-25" tabindex="-1" aria-label="code-block-10-25"></a></span>
+<span id="cb10-26"><a href="#cb10-26" tabindex="-1" aria-label="code-block-10-26"></a>   <span class="co">// We'll define these assuming we will not write information for</span></span>
+<span id="cb10-27"><a href="#cb10-27" tabindex="-1" aria-label="code-block-10-27"></a>   <span class="co">// more than 16 jets. We'll have to check for this in the code otherwise</span></span>
+<span id="cb10-28"><a href="#cb10-28" tabindex="-1" aria-label="code-block-10-28"></a>   <span class="co">// it could crash!</span></span>
+<span id="cb10-29"><a href="#cb10-29" tabindex="-1" aria-label="code-block-10-29"></a>   <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb10-30"><a href="#cb10-30" tabindex="-1" aria-label="code-block-10-30"></a>   <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb10-31"><a href="#cb10-31" tabindex="-1" aria-label="code-block-10-31"></a>   <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb10-32"><a href="#cb10-32" tabindex="-1" aria-label="code-block-10-32"></a></span>
+<span id="cb10-33"><a href="#cb10-33" tabindex="-1" aria-label="code-block-10-33"></a>   <span class="co">// The first argument is ROOT's internal name of the variable.</span></span>
+<span id="cb10-34"><a href="#cb10-34" tabindex="-1" aria-label="code-block-10-34"></a>   <span class="co">// The second argument is the *address* of the actual variable we defined above</span></span>
+<span id="cb10-35"><a href="#cb10-35" tabindex="-1" aria-label="code-block-10-35"></a>   <span class="co">// The third argument defines the *type* of the variable to be stored, and the "F"</span></span>
+<span id="cb10-36"><a href="#cb10-36" tabindex="-1" aria-label="code-block-10-36"></a>   <span class="co">// at the end signifies that this is a float</span></span>
+<span id="cb10-37"><a href="#cb10-37" tabindex="-1" aria-label="code-block-10-37"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"met"</span><span class="op">,&amp;</span>met<span class="op">,</span><span class="st">"met/F"</span><span class="op">);</span></span>
+<span id="cb10-38"><a href="#cb10-38" tabindex="-1" aria-label="code-block-10-38"></a></span>
+<span id="cb10-39"><a href="#cb10-39" tabindex="-1" aria-label="code-block-10-39"></a>   <span class="co">// First we define njets where the syntax is the same as before,</span></span>
+<span id="cb10-40"><a href="#cb10-40" tabindex="-1" aria-label="code-block-10-40"></a>   <span class="co">// except we take care to identify this as an integer with the final</span></span>
+<span id="cb10-41"><a href="#cb10-41" tabindex="-1" aria-label="code-block-10-41"></a>   <span class="co">// /I designation</span></span>
+<span id="cb10-42"><a href="#cb10-42" tabindex="-1" aria-label="code-block-10-42"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"njets"</span><span class="op">,</span> <span class="op">&amp;</span>njets<span class="op">,</span> <span class="st">"njets/I"</span><span class="op">);</span></span>
+<span id="cb10-43"><a href="#cb10-43" tabindex="-1" aria-label="code-block-10-43"></a></span>
+<span id="cb10-44"><a href="#cb10-44" tabindex="-1" aria-label="code-block-10-44"></a>   <span class="co">// We can now define the other variables, but we use a slightly different</span></span>
+<span id="cb10-45"><a href="#cb10-45" tabindex="-1" aria-label="code-block-10-45"></a>   <span class="co">// syntax for the third argument to identify the variable that will be used</span></span>
+<span id="cb10-46"><a href="#cb10-46" tabindex="-1" aria-label="code-block-10-46"></a>   <span class="co">// to count the number of entries per event</span></span>
+<span id="cb10-47"><a href="#cb10-47" tabindex="-1" aria-label="code-block-10-47"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"pt"</span><span class="op">,</span> <span class="op">&amp;</span>pt<span class="op">,</span> <span class="st">"pt[njets]/F"</span><span class="op">);</span></span>
+<span id="cb10-48"><a href="#cb10-48" tabindex="-1" aria-label="code-block-10-48"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"eta"</span><span class="op">,</span> <span class="op">&amp;</span>eta<span class="op">,</span> <span class="st">"eta[njets]/F"</span><span class="op">);</span></span>
+<span id="cb10-49"><a href="#cb10-49" tabindex="-1" aria-label="code-block-10-49"></a>   t1<span class="op">.</span>Branch<span class="op">(</span><span class="st">"phi"</span><span class="op">,</span> <span class="op">&amp;</span>phi<span class="op">,</span> <span class="st">"phi[njets]/F"</span><span class="op">);</span></span>
+<span id="cb10-50"><a href="#cb10-50" tabindex="-1" aria-label="code-block-10-50"></a></span>
+<span id="cb10-51"><a href="#cb10-51" tabindex="-1" aria-label="code-block-10-51"></a>   <span class="dt">Int_t</span> nevents <span class="op">=</span> <span class="dv">1000</span><span class="op">;</span></span>
+<span id="cb10-52"><a href="#cb10-52" tabindex="-1" aria-label="code-block-10-52"></a></span>
+<span id="cb10-53"><a href="#cb10-53" tabindex="-1" aria-label="code-block-10-53"></a>   <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb10-54"><a href="#cb10-54" tabindex="-1" aria-label="code-block-10-54"></a></span>
+<span id="cb10-55"><a href="#cb10-55" tabindex="-1" aria-label="code-block-10-55"></a>       <span class="co">// Generate random number between 10-60 (arbitrary)</span></span>
+<span id="cb10-56"><a href="#cb10-56" tabindex="-1" aria-label="code-block-10-56"></a>       met <span class="op">=</span> <span class="dv">50</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">+</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb10-57"><a href="#cb10-57" tabindex="-1" aria-label="code-block-10-57"></a></span>
+<span id="cb10-58"><a href="#cb10-58" tabindex="-1" aria-label="code-block-10-58"></a>       <span class="co">// Generate random number between 0-5, inclusive</span></span>
+<span id="cb10-59"><a href="#cb10-59" tabindex="-1" aria-label="code-block-10-59"></a>       njets <span class="op">=</span> gRandom<span class="op">-&gt;</span>Integer<span class="op">(</span><span class="dv">6</span><span class="op">);</span></span>
+<span id="cb10-60"><a href="#cb10-60" tabindex="-1" aria-label="code-block-10-60"></a></span>
+<span id="cb10-61"><a href="#cb10-61" tabindex="-1" aria-label="code-block-10-61"></a>       <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span>njets<span class="op">;</span>j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb10-62"><a href="#cb10-62" tabindex="-1" aria-label="code-block-10-62"></a>           pt<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">100</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
+<span id="cb10-63"><a href="#cb10-63" tabindex="-1" aria-label="code-block-10-63"></a>           eta<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="dv">6</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">();</span></span>
+<span id="cb10-64"><a href="#cb10-64" tabindex="-1" aria-label="code-block-10-64"></a>           phi<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span>  <span class="fl">6.28</span><span class="op">*</span>gRandom<span class="op">-&gt;</span>Rndm<span class="op">()</span> <span class="op">-</span> <span class="fl">3.14</span><span class="op">;</span></span>
+<span id="cb10-65"><a href="#cb10-65" tabindex="-1" aria-label="code-block-10-65"></a>       <span class="op">}</span></span>
+<span id="cb10-66"><a href="#cb10-66" tabindex="-1" aria-label="code-block-10-66"></a></span>
+<span id="cb10-67"><a href="#cb10-67" tabindex="-1" aria-label="code-block-10-67"></a>       <span class="co">// After each event we need to *fill* the TTree</span></span>
+<span id="cb10-68"><a href="#cb10-68" tabindex="-1" aria-label="code-block-10-68"></a>       t1<span class="op">.</span>Fill<span class="op">();</span></span>
+<span id="cb10-69"><a href="#cb10-69" tabindex="-1" aria-label="code-block-10-69"></a>   <span class="op">}</span></span>
+<span id="cb10-70"><a href="#cb10-70" tabindex="-1" aria-label="code-block-10-70"></a></span>
+<span id="cb10-71"><a href="#cb10-71" tabindex="-1" aria-label="code-block-10-71"></a>   <span class="co">// After we've run over all the events, we "change directory" to the file object</span></span>
+<span id="cb10-72"><a href="#cb10-72" tabindex="-1" aria-label="code-block-10-72"></a>   <span class="co">// and write the tree to it.</span></span>
+<span id="cb10-73"><a href="#cb10-73" tabindex="-1" aria-label="code-block-10-73"></a>   <span class="co">// We can also print the tree, just as a visual identifier to ourselves that</span></span>
+<span id="cb10-74"><a href="#cb10-74" tabindex="-1" aria-label="code-block-10-74"></a>   <span class="co">// the program ran to completion.</span></span>
+<span id="cb10-75"><a href="#cb10-75" tabindex="-1" aria-label="code-block-10-75"></a>   f<span class="op">.</span>cd<span class="op">();</span></span>
+<span id="cb10-76"><a href="#cb10-76" tabindex="-1" aria-label="code-block-10-76"></a>   t1<span class="op">.</span>Write<span class="op">();</span></span>
+<span id="cb10-77"><a href="#cb10-77" tabindex="-1" aria-label="code-block-10-77"></a>   t1<span class="op">.</span>Print<span class="op">();</span></span>
+<span id="cb10-78"><a href="#cb10-78" tabindex="-1" aria-label="code-block-10-78"></a>   </span>
+<span id="cb10-79"><a href="#cb10-79" tabindex="-1" aria-label="code-block-10-79"></a>   <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-80"><a href="#cb10-80" tabindex="-1" aria-label="code-block-10-80"></a><span class="op">}</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -734,17 +734,17 @@ You’ll most likely do this with the editor of your choice.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">MAKEFILE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode makefile" tabindex="0"><code class="sourceCode makefile"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="dt">CC</span><span class="ch">=</span><span class="st">g++</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="dt">CFLAGS</span><span class="ch">=</span><span class="st">-c -g -Wall `root-config --cflags`</span></span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="dt">LDFLAGS</span><span class="ch">=</span><span class="st">`root-config --glibs`</span></span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="dv">all:</span><span class="dt"> write_ROOT_file</span></span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="dv">write_ROOT_file:</span><span class="dt"> write_ROOT_file.cc</span></span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="er">    </span><span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o write_ROOT_file.o write_ROOT_file.cc</span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o write_ROOT_file write_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span></code></pre>
+<pre class="sourceCode makefile" tabindex="0"><code class="sourceCode makefile"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="dt">CC</span><span class="ch">=</span><span class="st">g++</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1" aria-label="code-block-11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1" aria-label="code-block-11-3"></a><span class="dt">CFLAGS</span><span class="ch">=</span><span class="st">-c -g -Wall `root-config --cflags`</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1" aria-label="code-block-11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1" aria-label="code-block-11-5"></a><span class="dt">LDFLAGS</span><span class="ch">=</span><span class="st">`root-config --glibs`</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1" aria-label="code-block-11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1" aria-label="code-block-11-7"></a><span class="dv">all:</span><span class="dt"> write_ROOT_file</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1" aria-label="code-block-11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1" aria-label="code-block-11-9"></a><span class="dv">write_ROOT_file:</span><span class="dt"> write_ROOT_file.cc</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1" aria-label="code-block-11-10"></a><span class="er">    </span><span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o write_ROOT_file.o write_ROOT_file.cc</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1" aria-label="code-block-11-11"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o write_ROOT_file write_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span></code></pre>
 </div>
 <div id="warning-tabs-are-important-in-makefiles" class="callout">
 <div class="callout-square">
@@ -766,8 +766,8 @@ four (4) spaces.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">MAKEFILE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode makefile" tabindex="0"><code class="sourceCode makefile"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>   <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o write_ROOT_file.o write_ROOT_file.cc</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>   <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o write_ROOT_file write_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span></code></pre>
+<pre class="sourceCode makefile" tabindex="0"><code class="sourceCode makefile"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a>   <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o write_ROOT_file.o write_ROOT_file.cc</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a>   <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o write_ROOT_file write_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span></code></pre>
 </div>
 <p>If your Makefile has spaces at those points instead of a tab,
 <code>make</code> will not work for you and you will get an error.</p>
@@ -779,8 +779,8 @@ line of your <code>my_root</code> container shell!</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">make</span> write_ROOT_file</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="ex">./write_ROOT_file</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="fu">make</span> write_ROOT_file</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a><span class="ex">./write_ROOT_file</span></span></code></pre>
 </div>
 <div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -790,7 +790,7 @@ line of your <code>my_root</code> container shell!</p>
   Output from write_ROOT_file
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -864,27 +864,27 @@ program.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1" aria-label="code-block-15-2"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1" aria-label="code-block-15-4"></a></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1" aria-label="code-block-15-5"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1" aria-label="code-block-15-6"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1" aria-label="code-block-15-7"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1" aria-label="code-block-15-8"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1" aria-label="code-block-15-9"></a></span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1" aria-label="code-block-15-10"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1" aria-label="code-block-15-11"></a></span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1" aria-label="code-block-15-12"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1" aria-label="code-block-15-13"></a><span class="op">}</span></span></code></pre>
 </div>
 <p>In the <code>main</code> function, we’ll define the input file.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>   <span class="co">// Here's the input file</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>   <span class="co">// Without the 'recreate' argument, ROOT will assume this file exists to be read in.</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>   TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">);</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a>   <span class="co">// Here's the input file</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1" aria-label="code-block-16-2"></a>   <span class="co">// Without the 'recreate' argument, ROOT will assume this file exists to be read in.</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1" aria-label="code-block-16-3"></a>   TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">);</span></span></code></pre>
 </div>
 <p>We’ll make use of the built-in member functions to <code>TFile</code>
 to pull out the <code>TTree</code> named <code>t1</code>. There’s a few
@@ -907,9 +907,9 @@ out there.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>   <span class="co">// We will now "Get" the tree from the file and assign it to</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>   <span class="co">// a new local variable.</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>   TTree <span class="op">*</span>input_tree <span class="op">=</span> <span class="op">(</span>TTree<span class="op">*)</span>f<span class="op">.</span>Get<span class="op">(</span><span class="st">"t1"</span><span class="op">);</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a>   <span class="co">// We will now "Get" the tree from the file and assign it to</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1" aria-label="code-block-17-2"></a>   <span class="co">// a new local variable.</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1" aria-label="code-block-17-3"></a>   TTree <span class="op">*</span>input_tree <span class="op">=</span> <span class="op">(</span>TTree<span class="op">*)</span>f<span class="op">.</span>Get<span class="op">(</span><span class="st">"t1"</span><span class="op">);</span></span></code></pre>
 </div>
 <p>Just as we did in the <code>write_ROOT_file.cc</code> example, we
 will define some local variables. These variables will actually get
@@ -917,11 +917,11 @@ will define some local variables. These variables will actually get
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>   <span class="dt">Float_t</span> met<span class="op">;</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>   <span class="dt">Int_t</span> njets<span class="op">;</span></span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>   <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>   <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>   <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a>   <span class="dt">Float_t</span> met<span class="op">;</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a>   <span class="dt">Int_t</span> njets<span class="op">;</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a>   <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1" aria-label="code-block-18-4"></a>   <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a>   <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span></code></pre>
 </div>
 <p>We’ll now assign these local variables to specific
 <code>TBranch</code>es in <code>input_tree</code>. Note that we’ll be
@@ -930,12 +930,12 @@ variable name with an ampersand <code>&amp;</code>.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>   <span class="co">// Assign these variables to specific branch addresses</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"met"</span><span class="op">,</span> <span class="op">&amp;</span>met<span class="op">);</span></span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"njets"</span><span class="op">,</span> <span class="op">&amp;</span>njets<span class="op">);</span></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"pt"</span><span class="op">,</span> <span class="op">&amp;</span>pt<span class="op">);</span></span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"eta"</span><span class="op">,</span> <span class="op">&amp;</span>eta<span class="op">);</span></span>
-<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"phi"</span><span class="op">,</span> <span class="op">&amp;</span>phi<span class="op">);</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" tabindex="-1" aria-label="code-block-19-1"></a>   <span class="co">// Assign these variables to specific branch addresses</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1" aria-label="code-block-19-2"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"met"</span><span class="op">,</span> <span class="op">&amp;</span>met<span class="op">);</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1" aria-label="code-block-19-3"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"njets"</span><span class="op">,</span> <span class="op">&amp;</span>njets<span class="op">);</span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1" aria-label="code-block-19-4"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"pt"</span><span class="op">,</span> <span class="op">&amp;</span>pt<span class="op">);</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1" aria-label="code-block-19-5"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"eta"</span><span class="op">,</span> <span class="op">&amp;</span>eta<span class="op">);</span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1" aria-label="code-block-19-6"></a>   input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"phi"</span><span class="op">,</span> <span class="op">&amp;</span>phi<span class="op">);</span></span></code></pre>
 </div>
 <p>We’re ready now to loop over events! Each time we call
 <code>input_tree-&gt;GetEntry(i)</code>, it pulls the <code>i</code>th
@@ -944,20 +944,20 @@ with those values.</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>       <span class="co">// Get the values for the i`th event and fill all our local variables</span></span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>       <span class="co">// that were assigned to TBranches</span></span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>       input_tree<span class="op">-&gt;</span>GetEntry<span class="op">(</span>i<span class="op">);</span></span>
-<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>       <span class="co">// Print the number of jets in this event</span></span>
-<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>       printf<span class="op">(</span><span class="st">"</span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> njets<span class="op">);</span></span>
-<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>       <span class="co">// Print out the momentum for each jet in this event</span></span>
-<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a>       <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span> j<span class="op">&lt;</span>njets<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a>           printf<span class="op">(</span><span class="st">"</span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> pt<span class="op">[</span>j<span class="op">],</span> eta<span class="op">[</span>j<span class="op">],</span> phi<span class="op">[</span>j<span class="op">]);</span></span>
-<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a>       <span class="op">}</span></span>
-<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a>   <span class="op">}</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" tabindex="-1" aria-label="code-block-20-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1" aria-label="code-block-20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1" aria-label="code-block-20-3"></a>       <span class="co">// Get the values for the i`th event and fill all our local variables</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1" aria-label="code-block-20-4"></a>       <span class="co">// that were assigned to TBranches</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1" aria-label="code-block-20-5"></a>       input_tree<span class="op">-&gt;</span>GetEntry<span class="op">(</span>i<span class="op">);</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1" aria-label="code-block-20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1" aria-label="code-block-20-7"></a>       <span class="co">// Print the number of jets in this event</span></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1" aria-label="code-block-20-8"></a>       printf<span class="op">(</span><span class="st">"</span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> njets<span class="op">);</span></span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1" aria-label="code-block-20-9"></a></span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1" aria-label="code-block-20-10"></a>       <span class="co">// Print out the momentum for each jet in this event</span></span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1" aria-label="code-block-20-11"></a>       <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span> j<span class="op">&lt;</span>njets<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1" aria-label="code-block-20-12"></a>           printf<span class="op">(</span><span class="st">"</span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> pt<span class="op">[</span>j<span class="op">],</span> eta<span class="op">[</span>j<span class="op">],</span> phi<span class="op">[</span>j<span class="op">]);</span></span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1" aria-label="code-block-20-13"></a>       <span class="op">}</span></span>
+<span id="cb20-14"><a href="#cb20-14" tabindex="-1" aria-label="code-block-20-14"></a>   <span class="op">}</span></span></code></pre>
 </div>
 <p>The final version of your <code>read_ROOT_file.cc</code> should look
 like this:</p>
@@ -969,68 +969,68 @@ like this:</p>
   Full source code file for read_ROOT_file.cc
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">CPP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
-<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
-<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
-<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span>
-<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a>  <span class="co">// Here's the input file</span></span>
-<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a>  <span class="co">// Without the 'recreate' argument, ROOT will assume this file exists to be read in.</span></span>
-<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a>  TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">);</span></span>
-<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a></span>
-<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a>  <span class="co">// We will now "Get" the tree from the file and assign it to</span></span>
-<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a>  <span class="co">// a new local variable.</span></span>
-<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a>  TTree <span class="op">*</span>input_tree <span class="op">=</span> <span class="op">(</span>TTree<span class="op">*)</span>f<span class="op">.</span>Get<span class="op">(</span><span class="st">"t1"</span><span class="op">);</span></span>
-<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a></span>
-<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a>  <span class="dt">Float_t</span> met<span class="op">;</span> <span class="co">// Missing energy in the transverse direction.</span></span>
-<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a></span>
-<span id="cb21-22"><a href="#cb21-22" tabindex="-1"></a>  <span class="dt">Int_t</span> njets<span class="op">;</span> <span class="co">// Necessary to keep track of the number of jets</span></span>
-<span id="cb21-23"><a href="#cb21-23" tabindex="-1"></a></span>
-<span id="cb21-24"><a href="#cb21-24" tabindex="-1"></a>  <span class="co">// We'll define these assuming we will not write information for</span></span>
-<span id="cb21-25"><a href="#cb21-25" tabindex="-1"></a>  <span class="co">// more than 16 jets. We'll have to check for this in the code otherwise</span></span>
-<span id="cb21-26"><a href="#cb21-26" tabindex="-1"></a>  <span class="co">// it could crash!</span></span>
-<span id="cb21-27"><a href="#cb21-27" tabindex="-1"></a>  <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb21-28"><a href="#cb21-28" tabindex="-1"></a>  <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb21-29"><a href="#cb21-29" tabindex="-1"></a>  <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
-<span id="cb21-30"><a href="#cb21-30" tabindex="-1"></a></span>
-<span id="cb21-31"><a href="#cb21-31" tabindex="-1"></a>  <span class="co">// Assign these variables to specific branch addresses</span></span>
-<span id="cb21-32"><a href="#cb21-32" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"met"</span><span class="op">,</span> <span class="op">&amp;</span>met<span class="op">);</span></span>
-<span id="cb21-33"><a href="#cb21-33" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"njets"</span><span class="op">,</span> <span class="op">&amp;</span>njets<span class="op">);</span></span>
-<span id="cb21-34"><a href="#cb21-34" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"pt"</span><span class="op">,</span> <span class="op">&amp;</span>pt<span class="op">);</span></span>
-<span id="cb21-35"><a href="#cb21-35" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"eta"</span><span class="op">,</span> <span class="op">&amp;</span>eta<span class="op">);</span></span>
-<span id="cb21-36"><a href="#cb21-36" tabindex="-1"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"phi"</span><span class="op">,</span> <span class="op">&amp;</span>phi<span class="op">);</span></span>
-<span id="cb21-37"><a href="#cb21-37" tabindex="-1"></a></span>
-<span id="cb21-38"><a href="#cb21-38" tabindex="-1"></a>  <span class="co">// Get the number of events in the file</span></span>
-<span id="cb21-39"><a href="#cb21-39" tabindex="-1"></a>  <span class="dt">Int_t</span> nevents <span class="op">=</span> input_tree<span class="op">-&gt;</span>GetEntries<span class="op">();</span></span>
-<span id="cb21-40"><a href="#cb21-40" tabindex="-1"></a></span>
-<span id="cb21-41"><a href="#cb21-41" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb21-42"><a href="#cb21-42" tabindex="-1"></a></span>
-<span id="cb21-43"><a href="#cb21-43" tabindex="-1"></a>      <span class="co">// Get the values for the i`th event and fill all our local variables</span></span>
-<span id="cb21-44"><a href="#cb21-44" tabindex="-1"></a>      <span class="co">// that were assigned to TBranches</span></span>
-<span id="cb21-45"><a href="#cb21-45" tabindex="-1"></a>      input_tree<span class="op">-&gt;</span>GetEntry<span class="op">(</span>i<span class="op">);</span></span>
-<span id="cb21-46"><a href="#cb21-46" tabindex="-1"></a></span>
-<span id="cb21-47"><a href="#cb21-47" tabindex="-1"></a>      <span class="co">// Print the number of jets in this event</span></span>
-<span id="cb21-48"><a href="#cb21-48" tabindex="-1"></a>      printf<span class="op">(</span><span class="st">"</span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span>njets<span class="op">);</span></span>
-<span id="cb21-49"><a href="#cb21-49" tabindex="-1"></a></span>
-<span id="cb21-50"><a href="#cb21-50" tabindex="-1"></a>      <span class="co">// Print out the momentum for each jet in this event</span></span>
-<span id="cb21-51"><a href="#cb21-51" tabindex="-1"></a>      <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span> j<span class="op">&lt;</span>njets<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb21-52"><a href="#cb21-52" tabindex="-1"></a>          printf<span class="op">(</span><span class="st">"</span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> pt<span class="op">[</span>j<span class="op">],</span> eta<span class="op">[</span>j<span class="op">],</span> phi<span class="op">[</span>j<span class="op">]);</span></span>
-<span id="cb21-53"><a href="#cb21-53" tabindex="-1"></a>      <span class="op">}</span></span>
-<span id="cb21-54"><a href="#cb21-54" tabindex="-1"></a>  <span class="op">}</span></span>
-<span id="cb21-55"><a href="#cb21-55" tabindex="-1"></a></span>
-<span id="cb21-56"><a href="#cb21-56" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb21-57"><a href="#cb21-57" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+<pre class="sourceCode cpp" tabindex="0"><code class="sourceCode cpp"><span id="cb21-1"><a href="#cb21-1" tabindex="-1" aria-label="code-block-21-1"></a><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1" aria-label="code-block-21-2"></a><span class="pp">#include </span><span class="im">&lt;cstdlib&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1" aria-label="code-block-21-3"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1" aria-label="code-block-21-4"></a></span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1" aria-label="code-block-21-5"></a><span class="pp">#include </span><span class="im">"TROOT.h"</span></span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1" aria-label="code-block-21-6"></a><span class="pp">#include </span><span class="im">"TTree.h"</span></span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1" aria-label="code-block-21-7"></a><span class="pp">#include </span><span class="im">"TFile.h"</span></span>
+<span id="cb21-8"><a href="#cb21-8" tabindex="-1" aria-label="code-block-21-8"></a><span class="pp">#include </span><span class="im">"TRandom.h"</span></span>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1" aria-label="code-block-21-9"></a></span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1" aria-label="code-block-21-10"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1" aria-label="code-block-21-11"></a></span>
+<span id="cb21-12"><a href="#cb21-12" tabindex="-1" aria-label="code-block-21-12"></a>  <span class="co">// Here's the input file</span></span>
+<span id="cb21-13"><a href="#cb21-13" tabindex="-1" aria-label="code-block-21-13"></a>  <span class="co">// Without the 'recreate' argument, ROOT will assume this file exists to be read in.</span></span>
+<span id="cb21-14"><a href="#cb21-14" tabindex="-1" aria-label="code-block-21-14"></a>  TFile f<span class="op">(</span><span class="st">"tree.root"</span><span class="op">);</span></span>
+<span id="cb21-15"><a href="#cb21-15" tabindex="-1" aria-label="code-block-21-15"></a></span>
+<span id="cb21-16"><a href="#cb21-16" tabindex="-1" aria-label="code-block-21-16"></a>  <span class="co">// We will now "Get" the tree from the file and assign it to</span></span>
+<span id="cb21-17"><a href="#cb21-17" tabindex="-1" aria-label="code-block-21-17"></a>  <span class="co">// a new local variable.</span></span>
+<span id="cb21-18"><a href="#cb21-18" tabindex="-1" aria-label="code-block-21-18"></a>  TTree <span class="op">*</span>input_tree <span class="op">=</span> <span class="op">(</span>TTree<span class="op">*)</span>f<span class="op">.</span>Get<span class="op">(</span><span class="st">"t1"</span><span class="op">);</span></span>
+<span id="cb21-19"><a href="#cb21-19" tabindex="-1" aria-label="code-block-21-19"></a></span>
+<span id="cb21-20"><a href="#cb21-20" tabindex="-1" aria-label="code-block-21-20"></a>  <span class="dt">Float_t</span> met<span class="op">;</span> <span class="co">// Missing energy in the transverse direction.</span></span>
+<span id="cb21-21"><a href="#cb21-21" tabindex="-1" aria-label="code-block-21-21"></a></span>
+<span id="cb21-22"><a href="#cb21-22" tabindex="-1" aria-label="code-block-21-22"></a>  <span class="dt">Int_t</span> njets<span class="op">;</span> <span class="co">// Necessary to keep track of the number of jets</span></span>
+<span id="cb21-23"><a href="#cb21-23" tabindex="-1" aria-label="code-block-21-23"></a></span>
+<span id="cb21-24"><a href="#cb21-24" tabindex="-1" aria-label="code-block-21-24"></a>  <span class="co">// We'll define these assuming we will not write information for</span></span>
+<span id="cb21-25"><a href="#cb21-25" tabindex="-1" aria-label="code-block-21-25"></a>  <span class="co">// more than 16 jets. We'll have to check for this in the code otherwise</span></span>
+<span id="cb21-26"><a href="#cb21-26" tabindex="-1" aria-label="code-block-21-26"></a>  <span class="co">// it could crash!</span></span>
+<span id="cb21-27"><a href="#cb21-27" tabindex="-1" aria-label="code-block-21-27"></a>  <span class="dt">Float_t</span> pt<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb21-28"><a href="#cb21-28" tabindex="-1" aria-label="code-block-21-28"></a>  <span class="dt">Float_t</span> eta<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb21-29"><a href="#cb21-29" tabindex="-1" aria-label="code-block-21-29"></a>  <span class="dt">Float_t</span> phi<span class="op">[</span><span class="dv">16</span><span class="op">];</span></span>
+<span id="cb21-30"><a href="#cb21-30" tabindex="-1" aria-label="code-block-21-30"></a></span>
+<span id="cb21-31"><a href="#cb21-31" tabindex="-1" aria-label="code-block-21-31"></a>  <span class="co">// Assign these variables to specific branch addresses</span></span>
+<span id="cb21-32"><a href="#cb21-32" tabindex="-1" aria-label="code-block-21-32"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"met"</span><span class="op">,</span> <span class="op">&amp;</span>met<span class="op">);</span></span>
+<span id="cb21-33"><a href="#cb21-33" tabindex="-1" aria-label="code-block-21-33"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"njets"</span><span class="op">,</span> <span class="op">&amp;</span>njets<span class="op">);</span></span>
+<span id="cb21-34"><a href="#cb21-34" tabindex="-1" aria-label="code-block-21-34"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"pt"</span><span class="op">,</span> <span class="op">&amp;</span>pt<span class="op">);</span></span>
+<span id="cb21-35"><a href="#cb21-35" tabindex="-1" aria-label="code-block-21-35"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"eta"</span><span class="op">,</span> <span class="op">&amp;</span>eta<span class="op">);</span></span>
+<span id="cb21-36"><a href="#cb21-36" tabindex="-1" aria-label="code-block-21-36"></a>  input_tree<span class="op">-&gt;</span>SetBranchAddress<span class="op">(</span><span class="st">"phi"</span><span class="op">,</span> <span class="op">&amp;</span>phi<span class="op">);</span></span>
+<span id="cb21-37"><a href="#cb21-37" tabindex="-1" aria-label="code-block-21-37"></a></span>
+<span id="cb21-38"><a href="#cb21-38" tabindex="-1" aria-label="code-block-21-38"></a>  <span class="co">// Get the number of events in the file</span></span>
+<span id="cb21-39"><a href="#cb21-39" tabindex="-1" aria-label="code-block-21-39"></a>  <span class="dt">Int_t</span> nevents <span class="op">=</span> input_tree<span class="op">-&gt;</span>GetEntries<span class="op">();</span></span>
+<span id="cb21-40"><a href="#cb21-40" tabindex="-1" aria-label="code-block-21-40"></a></span>
+<span id="cb21-41"><a href="#cb21-41" tabindex="-1" aria-label="code-block-21-41"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>nevents<span class="op">;</span>i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb21-42"><a href="#cb21-42" tabindex="-1" aria-label="code-block-21-42"></a></span>
+<span id="cb21-43"><a href="#cb21-43" tabindex="-1" aria-label="code-block-21-43"></a>      <span class="co">// Get the values for the i`th event and fill all our local variables</span></span>
+<span id="cb21-44"><a href="#cb21-44" tabindex="-1" aria-label="code-block-21-44"></a>      <span class="co">// that were assigned to TBranches</span></span>
+<span id="cb21-45"><a href="#cb21-45" tabindex="-1" aria-label="code-block-21-45"></a>      input_tree<span class="op">-&gt;</span>GetEntry<span class="op">(</span>i<span class="op">);</span></span>
+<span id="cb21-46"><a href="#cb21-46" tabindex="-1" aria-label="code-block-21-46"></a></span>
+<span id="cb21-47"><a href="#cb21-47" tabindex="-1" aria-label="code-block-21-47"></a>      <span class="co">// Print the number of jets in this event</span></span>
+<span id="cb21-48"><a href="#cb21-48" tabindex="-1" aria-label="code-block-21-48"></a>      printf<span class="op">(</span><span class="st">"</span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span>njets<span class="op">);</span></span>
+<span id="cb21-49"><a href="#cb21-49" tabindex="-1" aria-label="code-block-21-49"></a></span>
+<span id="cb21-50"><a href="#cb21-50" tabindex="-1" aria-label="code-block-21-50"></a>      <span class="co">// Print out the momentum for each jet in this event</span></span>
+<span id="cb21-51"><a href="#cb21-51" tabindex="-1" aria-label="code-block-21-51"></a>      <span class="cf">for</span> <span class="op">(</span><span class="dt">Int_t</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span> j<span class="op">&lt;</span>njets<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb21-52"><a href="#cb21-52" tabindex="-1" aria-label="code-block-21-52"></a>          printf<span class="op">(</span><span class="st">"</span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f</span><span class="st">, </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> pt<span class="op">[</span>j<span class="op">],</span> eta<span class="op">[</span>j<span class="op">],</span> phi<span class="op">[</span>j<span class="op">]);</span></span>
+<span id="cb21-53"><a href="#cb21-53" tabindex="-1" aria-label="code-block-21-53"></a>      <span class="op">}</span></span>
+<span id="cb21-54"><a href="#cb21-54" tabindex="-1" aria-label="code-block-21-54"></a>  <span class="op">}</span></span>
+<span id="cb21-55"><a href="#cb21-55" tabindex="-1" aria-label="code-block-21-55"></a></span>
+<span id="cb21-56"><a href="#cb21-56" tabindex="-1" aria-label="code-block-21-56"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb21-57"><a href="#cb21-57" tabindex="-1" aria-label="code-block-21-57"></a><span class="op">}</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1041,32 +1041,32 @@ We edit it so that it looks like this.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">MAKEFILE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode makefile" tabindex="0"><code class="sourceCode makefile"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="dt">CC</span><span class="ch">=</span><span class="st">g++</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="dt">CFLAGS</span><span class="ch">=</span><span class="st">-c -g -Wall `root-config --cflags`</span></span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="dt">LDFLAGS</span><span class="ch">=</span><span class="st">`root-config --glibs`</span></span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a><span class="dv">all:</span><span class="dt"> write_ROOT_file read_ROOT_file</span></span>
-<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a><span class="dv">write_ROOT_file:</span><span class="dt"> write_ROOT_file.cc</span></span>
-<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a><span class="er">    </span><span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o write_ROOT_file.o write_ROOT_file.cc</span>
-<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o write_ROOT_file write_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span>
-<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a><span class="dv">read_ROOT_file:</span><span class="dt"> read_ROOT_file.cc</span></span>
-<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a><span class="er">    </span><span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o read_ROOT_file.o read_ROOT_file.cc</span>
-<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o read_ROOT_file read_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span>
-<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a></span>
-<span id="cb22-17"><a href="#cb22-17" tabindex="-1"></a><span class="dv">clean:</span></span>
-<span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a><span class="er">    </span>rm -f ./*~ ./*.o ./write_ROOT_file</span>
-<span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a>    rm -f ./*~ ./*.o ./read_ROOT_file</span></code></pre>
+<pre class="sourceCode makefile" tabindex="0"><code class="sourceCode makefile"><span id="cb22-1"><a href="#cb22-1" tabindex="-1" aria-label="code-block-22-1"></a><span class="dt">CC</span><span class="ch">=</span><span class="st">g++</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1" aria-label="code-block-22-2"></a></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1" aria-label="code-block-22-3"></a><span class="dt">CFLAGS</span><span class="ch">=</span><span class="st">-c -g -Wall `root-config --cflags`</span></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1" aria-label="code-block-22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1" aria-label="code-block-22-5"></a><span class="dt">LDFLAGS</span><span class="ch">=</span><span class="st">`root-config --glibs`</span></span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1" aria-label="code-block-22-6"></a></span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1" aria-label="code-block-22-7"></a><span class="dv">all:</span><span class="dt"> write_ROOT_file read_ROOT_file</span></span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1" aria-label="code-block-22-8"></a></span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1" aria-label="code-block-22-9"></a><span class="dv">write_ROOT_file:</span><span class="dt"> write_ROOT_file.cc</span></span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1" aria-label="code-block-22-10"></a><span class="er">    </span><span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o write_ROOT_file.o write_ROOT_file.cc</span>
+<span id="cb22-11"><a href="#cb22-11" tabindex="-1" aria-label="code-block-22-11"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o write_ROOT_file write_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span>
+<span id="cb22-12"><a href="#cb22-12" tabindex="-1" aria-label="code-block-22-12"></a></span>
+<span id="cb22-13"><a href="#cb22-13" tabindex="-1" aria-label="code-block-22-13"></a><span class="dv">read_ROOT_file:</span><span class="dt"> read_ROOT_file.cc</span></span>
+<span id="cb22-14"><a href="#cb22-14" tabindex="-1" aria-label="code-block-22-14"></a><span class="er">    </span><span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$(</span><span class="dt">CFLAGS</span><span class="ch">)</span> -o read_ROOT_file.o read_ROOT_file.cc</span>
+<span id="cb22-15"><a href="#cb22-15" tabindex="-1" aria-label="code-block-22-15"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> -o read_ROOT_file read_ROOT_file.o <span class="ch">$(</span><span class="dt">LDFLAGS</span><span class="ch">)</span></span>
+<span id="cb22-16"><a href="#cb22-16" tabindex="-1" aria-label="code-block-22-16"></a></span>
+<span id="cb22-17"><a href="#cb22-17" tabindex="-1" aria-label="code-block-22-17"></a><span class="dv">clean:</span></span>
+<span id="cb22-18"><a href="#cb22-18" tabindex="-1" aria-label="code-block-22-18"></a><span class="er">    </span>rm -f ./*~ ./*.o ./write_ROOT_file</span>
+<span id="cb22-19"><a href="#cb22-19" tabindex="-1" aria-label="code-block-22-19"></a>    rm -f ./*~ ./*.o ./read_ROOT_file</span></code></pre>
 </div>
 <p>We can now compile and run the code!</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">make</span> read_ROOT_file</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">./read_ROOT_file</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1" aria-label="code-block-23-1"></a><span class="fu">make</span> read_ROOT_file</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1" aria-label="code-block-23-2"></a><span class="ex">./read_ROOT_file</span></span></code></pre>
 </div>
 <p>We get a lot of output! However it should look something like the
 following, keeping in mind your numbers will be different because of the
@@ -1079,7 +1079,7 @@ random numbers that make up the values.</p>
   Output of read_ROOT_file
   </h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1176,7 +1176,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.0" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/cms-opendata-workshop/varnish/tree/405b7a74ee1b2fc89c3e49e116ce96d4d65182b3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/cms-opendata-workshop/varnish/tree/405b7a74ee1b2fc89c3e49e116ce96d4d65182b3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1199,7 +1199,7 @@ any links that you are not going to use.
   "identifier": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/03-root-and-cpp-read-and-write.html",
   "dateCreated": "2024-12-16",
   "dateModified": "2024-12-16",
-  "datePublished": "2026-04-14"
+  "datePublished": "2026-04-21"
 }
 
   </script><script>
