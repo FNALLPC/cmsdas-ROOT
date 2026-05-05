@@ -626,7 +626,7 @@ all record of what muon belonged to which event.</p>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1" aria-label="code-block-16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3" tabindex="-1" aria-label="code-block-16-3"></a>plt.figure()</span>
 <span id="cb16-4"><a href="#cb16-4" tabindex="-1" aria-label="code-block-16-4"></a>plt.hist(ak.flatten(pt.array()),bins<span class="op">=</span><span class="dv">100</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">100</span>))<span class="op">;</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1" aria-label="code-block-16-5"></a>plt.xlabel(<span class="vs">r'Muon $p_T$ (GeV/c)'</span>,fontsize<span class="op">=</span><span class="dv">14</span>)</span></code></pre>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1" aria-label="code-block-16-5"></a>plt.xlabel(<span class="vs">r'Muon </span><span class="dv">$</span><span class="vs">p_T</span><span class="dv">$</span><span class="vs"> </span><span class="kw">(</span><span class="vs">GeV/c</span><span class="kw">)</span><span class="vs">'</span>,fontsize<span class="op">=</span><span class="dv">14</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -652,7 +652,7 @@ there is a faster way!</p>
   Python code (event loop)
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -738,7 +738,7 @@ there is a faster way!</p>
 <span id="cb18-79"><a href="#cb18-79" tabindex="-1" aria-label="code-block-18-79"></a></span>
 <span id="cb18-80"><a href="#cb18-80" tabindex="-1" aria-label="code-block-18-80"></a>plt.figure()</span>
 <span id="cb18-81"><a href="#cb18-81" tabindex="-1" aria-label="code-block-18-81"></a>plt.hist(masses,bins<span class="op">=</span><span class="dv">140</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">80</span>,<span class="dv">150</span>))</span>
-<span id="cb18-82"><a href="#cb18-82" tabindex="-1" aria-label="code-block-18-82"></a>plt.xlabel(<span class="vs">r'4-muon invariant mass (GeV/c$^2$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
+<span id="cb18-82"><a href="#cb18-82" tabindex="-1" aria-label="code-block-18-82"></a>plt.xlabel(<span class="vs">r'4-muon invariant mass </span><span class="kw">(</span><span class="vs">GeV/c</span><span class="dv">$^</span><span class="vs">2</span><span class="dv">$</span><span class="vs">'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
 <span id="cb18-83"><a href="#cb18-83" tabindex="-1" aria-label="code-block-18-83"></a>plt.show()</span></code></pre>
 </div>
 </div>
@@ -759,7 +759,7 @@ how much faster using the built-in awkward functions can be:</p>
   Python code (awkward array)
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -787,7 +787,7 @@ how much faster using the built-in awkward functions can be:</p>
 <span id="cb19-21"><a href="#cb19-21" tabindex="-1" aria-label="code-block-19-21"></a><span class="bu">print</span>(<span class="ss">f"Time to run: </span><span class="sc">{</span>(time.time() <span class="op">-</span> start)<span class="sc">}</span><span class="ss"> seconds"</span>) </span>
 <span id="cb19-22"><a href="#cb19-22" tabindex="-1" aria-label="code-block-19-22"></a></span>
 <span id="cb19-23"><a href="#cb19-23" tabindex="-1" aria-label="code-block-19-23"></a>plt.hist(ak.flatten(mass_fast[qtot<span class="op">==</span><span class="dv">0</span>]), bins<span class="op">=</span><span class="dv">140</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">80</span>,<span class="dv">150</span>))<span class="op">;</span></span>
-<span id="cb19-24"><a href="#cb19-24" tabindex="-1" aria-label="code-block-19-24"></a>plt.xlabel(<span class="vs">r'4-muon invariant mass (GeV/c$^2$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" tabindex="-1" aria-label="code-block-19-24"></a>plt.xlabel(<span class="vs">r'4-muon invariant mass </span><span class="kw">(</span><span class="vs">GeV/c</span><span class="dv">$^</span><span class="vs">2</span><span class="dv">$</span><span class="vs">'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
 <span id="cb19-25"><a href="#cb19-25" tabindex="-1" aria-label="code-block-19-25"></a>plt.show()</span></code></pre>
 </div>
 </div>
@@ -879,7 +879,7 @@ any links that you are not going to use.
   "identifier": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/07-awkward.html",
   "dateCreated": "2024-12-16",
   "dateModified": "2024-12-16",
-  "datePublished": "2026-04-28"
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
